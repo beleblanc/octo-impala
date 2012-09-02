@@ -1,0 +1,43 @@
+- @model_class = CaseDetail
+
+%ul.nav.nav-tabs
+  %li.active
+    %a{href:"#Background", data:{toggle:"tab"}} Background
+  %li
+    %a{href:"#Complainant", data:{toggle:"tab"}} Complainant(s)
+  %li
+    %a{href:"#Accused", data:{toggle:"tab"}} Accused(s)
+  %li
+    %a{href:"#Court_Ruling", data:{toggle:"tab"}} Court Ruling
+
+.tab-content
+  #Background.tab-pane.active
+
+    =render 'background'
+
+  #Complainant.tab-pane
+    %h3 Complainant(s)
+    -@case_detail.complainants.each do |c|
+      =render 'complainants', f:c
+
+  #Accused.tab-pane
+    %h3 Accused(s)
+    -@case_detail.accuseds.each do |a|
+      =render 'accuseds', f:a
+
+  #Court_Ruling.tab-pane
+    =render 'court_ruling'
+
+
+
+
+
+
+
+
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), case_detail_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(@case_detail), :class => 'btn'
+  -if can? :manage, CaseDetail
+    = link_to t('.destroy', :default => t("helpers.links.destroy")), case_detail_path(@case_detail), :method => "delete", :data => {:confirm => "Are you sure?"}, :class => 'btn btn-danger'

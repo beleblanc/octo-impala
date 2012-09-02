@@ -1,0 +1,31 @@
+// Place all the styles related to the CaseDetails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+#case_detail_charge_ids{
+	width:400px;
+
+}
+
+tr.info td{ background-color:#D9EDF7}
+
+tr.success td{ background-color:#DFF0D8}
+
+tr.danger td{background-color:#F2DEDE !important}

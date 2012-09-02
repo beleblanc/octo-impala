@@ -1,0 +1,35 @@
+= simple_form_for @case_detail, :html => { :class => 'form-inline' } do |f|
+  %ul.nav.nav-tabs
+    %li.active
+      %a{href:"#Background", data:{toggle:"tab"}} Background
+    %li
+      %a{href:"#Complainant", data:{toggle:"tab"}} Complainant(s)
+    %li
+      %a{href:"#Accused", data:{toggle:"tab"}} Accused(s)
+    %li
+      %a{href:"#Court_Ruling", data:{toggle:"tab"}} Court Ruling
+
+  .tab-content
+    #Background.tab-pane.active
+      
+      =render 'background_fields', f:f
+      
+    #Complainant.tab-pane
+      
+      = f.simple_fields_for :complainants do |complainant|
+        =render 'complainant_fields', f:complainant
+      =link_to_add_fields "Add +",f, :complainants
+      
+    #Accused.tab-pane
+      
+      = f.simple_fields_for :accuseds do |accused|
+        =render 'accused_fields', f:accused
+      =link_to_add_fields "Add +",f, :accuseds
+ 
+    #Court_Ruling.tab-pane
+      
+      =render 'court_ruling_fields', f:f
+  
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to "Cancel", case_details_path, :class => 'btn'

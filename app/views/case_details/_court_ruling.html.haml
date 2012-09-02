@@ -1,0 +1,26 @@
+.well
+  %p
+    %strong= @model_class.human_attribute_name(:status) + ':'
+    %br
+    = @case_detail.status
+  %p
+    %strong= @model_class.human_attribute_name(:comment) + ':'
+    %br
+    = @case_detail.comment
+  %p
+    %strong= @model_class.human_attribute_name(:judgment) + ':'
+    %br
+    = @case_detail.judgment
+  %p
+    %strong= @model_class.human_attribute_name(:sentence) + ':'
+    %br
+    = @case_detail.sentence
+  %p
+    %strong= @model_class.human_attribute_name(:reason_for_acquittal) + ':'
+    %br
+    = @case_detail.reason_for_acquittal
+
+  %p
+    %strong= @model_class.human_attribute_name(:judge_remarks) + ':'
+    %br
+    = @case_detail.judge_remarks

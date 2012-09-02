@@ -1,0 +1,19 @@
+.well
+  = f.input :prosecutor_id ,collection:Prosecutor.all,  label_method: :to_s, value_method: :id ,wrapper_html:{class:"pull-left"}
+  = f.input :judge_id, collection:Judge.all, label_method: :to_s, value_method: :id,wrapper_html:{class:"pull-left offset1"}
+  .cf
+  = f.input :rcci,wrapper_html:{class:"pull-left"}
+  = f.input :court_case_number,wrapper_html:{class:"pull-left offset1"}
+  .cf
+  = f.input :court_type , collection: [["High Court",1],["Magistrate Court",2] ], include_blank:true
+  = f.input :date_of_offence, as: :string, input_html:{class: "datepicker"}
+  = f.input :charge_ids, collection:Charge.all, label_method: :name, value_method: :id, input_html:{multiple:true}
+  = f.input :region_id, collection:Region.all, label_method: :name, calue_method: :id,wrapper_html:{class:"pull-left"}
+  = f.input :constituency_id, collection: Region.order(:name), as: :grouped_select,group_method: :constituencies ,wrapper_html:{class:"pull-left offset1"}
+  .cf
+  = f.input :date_reported, as: :string, input_html:{class: "datepicker"} ,wrapper_html:{class:"pull-left "}
+  = f.input :date_submitted, as: :string, input_html:{class: "datepicker"}  ,wrapper_html:{class:"pull-left offset1"}
+  .cf
+  = f.input :date_trial_commenced, as: :string, input_html:{class: "datepicker"} ,wrapper_html:{class:"pull-left "}
+  = f.input :date_trial_concluded, as: :string, input_html:{class: "datepicker"} ,wrapper_html:{class:"pull-left offset1"}
+  .cf

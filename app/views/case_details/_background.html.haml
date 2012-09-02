@@ -1,0 +1,55 @@
+.well
+  %p
+    %strong= @model_class.human_attribute_name(:prosecutor_id) + ':'
+    %br
+    = @case_detail.prosecutor
+  %p
+    %strong= @model_class.human_attribute_name(:judge_id) + ':'
+    %br
+    = @case_detail.judge
+  %p
+    %strong= @model_class.human_attribute_name(:rcci) + ':'
+    %br
+    = @case_detail.rcci
+  %p
+    %strong= @model_class.human_attribute_name(:court_case_number) + ':'
+    %br
+    = @case_detail.court_case_number
+  %p
+    %strong= @model_class.human_attribute_name(:court_type) + ':'
+    %br
+    = @case_detail.court_type
+    %p
+      %strong Charges
+      %br
+      -@case_detail.charges.each do |charge|
+        ="#{charge} "
+  
+  %p
+    %strong= @model_class.human_attribute_name(:date_of_offence) + ':'
+    %br
+    = @case_detail.date_of_offence
+  %p
+    %strong= @model_class.human_attribute_name(:region_id) + ':'
+    %br
+    = @case_detail.region_id
+  %p
+    %strong= @model_class.human_attribute_name(:constituency_id) + ':'
+    %br
+    = @case_detail.constituency_id
+  %p
+    %strong= @model_class.human_attribute_name(:date_reported) + ':'
+    %br
+    = @case_detail.date_reported
+  %p
+    %strong= @model_class.human_attribute_name(:date_submitted) + ':'
+    %br
+    = @case_detail.date_submitted
+  %p
+    %strong= @model_class.human_attribute_name(:date_trial_commenced) + ':'
+    %br
+    = @case_detail.date_trial_commenced
+  %p
+    %strong= @model_class.human_attribute_name(:date_trial_concluded) + ':'
+    %br
+    = @case_detail.date_trial_concluded

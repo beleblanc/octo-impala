@@ -1,0 +1,29 @@
+- model_class = CaseDetail
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped.datatable{data:{source: "#{case_details_url(format: "json")}"}}
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:court_case_number)
+      %th= model_class.human_attribute_name(:rcci)
+      %th= model_class.human_attribute_name(:date_of_offence)
+      %th= model_class.human_attribute_name(:constituency_id)
+      %th= model_class.human_attribute_name(:status)
+      %th Trial Commenced
+      %th Trial Concluded
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @case_details.each do |case_detail|
+      %tr{class: case_detail.get_status_highlight}
+        %td= link_to case_detail.court_case_number, case_detail_path(case_detail)
+        %td= case_detail.rcci
+        %td= case_detail.date_of_offence
+        %td= case_detail.constituency
+        %td= case_detail.status
+        %td= case_detail.date_trial_commenced
+        %td= case_detail.date_trial_concluded
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(case_detail), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), case_detail_path(case_detail), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_case_detail_url, :class => 'btn btn-primary'
