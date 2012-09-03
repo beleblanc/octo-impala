@@ -1,5 +1,7 @@
-# RailsAdmin config file. Generated on August 21, 2012 11:14
+  # RailsAdmin config file. Generated on August 21, 2012 11:14
 # See github.com/sferik/rails_admin for more informations
+
+
 
 RailsAdmin.config do |config|
 
@@ -235,28 +237,65 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model User do
-  #   # Found associations:
-  #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+
+  config.model Role do
+
+      configure :users do
+        inverse_of :roles
+      end
+      # Found associations:
+      # Found columns:
+      #  configure :id, :integer
+      #  configure :email, :string
+      #  configure :password, :password         # Hidden
+      #  configure :password_confirmation, :password         # Hidden
+      #  configure :reset_password_token, :string         # Hidden
+      #  configure :reset_password_sent_at, :datetime
+      #  configure :remember_created_at, :datetime
+      #  configure :sign_in_count, :integer
+      #  configure :current_sign_in_at, :datetime
+      #  configure :last_sign_in_at, :datetime
+      #  configure :current_sign_in_ip, :string
+      #  configure :last_sign_in_ip, :string
+      #  configure :created_at, :datetime
+      #  configure :updated_at, :datetime   #   # Sections:
+      #list do; end
+      #export do; end
+      #show do; end
+      #edit do; end
+      #create do; end
+      #update do; end
+    end
+
+  config.model User do
+
+    list do
+      configure :roles do
+
+      end
+
+    end
+    # Found associations:
+    # Found columns:
+    #  configure :id, :integer
+    #  configure :email, :string
+    #  configure :password, :password         # Hidden
+    #  configure :password_confirmation, :password         # Hidden
+    #  configure :reset_password_token, :string         # Hidden
+    #  configure :reset_password_sent_at, :datetime
+    #  configure :remember_created_at, :datetime
+    #  configure :sign_in_count, :integer
+    #  configure :current_sign_in_at, :datetime
+    #  configure :last_sign_in_at, :datetime
+    #  configure :current_sign_in_ip, :string
+    #  configure :last_sign_in_ip, :string
+    #  configure :created_at, :datetime
+    #  configure :updated_at, :datetime   #   # Sections:
+    #list do; end
+    #export do; end
+    #show do; end
+    #edit do; end
+    #create do; end
+    #update do; end
+  end
 end

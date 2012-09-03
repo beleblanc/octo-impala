@@ -3,7 +3,7 @@ class CaseDetail < ActiveRecord::Base
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,
                   :date_reported, :date_submitted, :action_taken, :status_id, :comment, :date_trial_commenced,
                   :date_trial_concluded, :judgment, :sentence, :complainant, :accused, :reason_for_acquittal,
-                  :judge_remarks,:charge_ids
+                  :judge_remarks,:charge_ids ,:user_id
 
   has_many :accuseds    , :dependent => :destroy
   has_many :complainants, :dependent => :destroy
@@ -13,6 +13,7 @@ class CaseDetail < ActiveRecord::Base
   belongs_to :prosecutor
   belongs_to :action
   belongs_to :status
+  belongs_to :user
   has_and_belongs_to_many :charges
 
 

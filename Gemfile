@@ -34,7 +34,7 @@ gem 'ransack'
 
 #gem 'meta_search'# '~> 1.1.0'
 gem 'simple_form'
-
+#gem 'client_side_validations'
 gem 'rails_admin'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

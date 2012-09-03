@@ -2,7 +2,11 @@ class CaseDetailsController < ApplicationController
   before_filter :find_case_detail, only: [:edit,:update, :show]
 
   def index
-    @case_details = CaseDetail.all
+    if current_user.has_role?(:admin) || current_user.has_role?(:super_admin)
+      @case_details = CaseDetail.all
+    else
+      @case_details = CaseDetail.where(:user_id => current_user.id)
+    end
   end
 
   def show

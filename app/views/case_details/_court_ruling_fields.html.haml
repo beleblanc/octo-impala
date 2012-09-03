@@ -1,6 +1,5 @@
 .well
   
-  = f.input :status_id, collection: Status.order(:name), label_method: :to_s, value_method: :id
   = f.input :comment, input_html:{class:"input-xxlarge", rows:"4"}
   = f.input :judgment
   = f.input :sentence

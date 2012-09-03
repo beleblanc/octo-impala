@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825103636) do
+ActiveRecord::Schema.define(:version => 20120903074956) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(:version => 20120825103636) do
     t.string   "judge_remarks"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.integer  "user_id"
   end
+
+  add_index "case_details", ["user_id"], :name => "index_case_details_on_user_id"
 
   create_table "case_details_charges", :id => false, :force => true do |t|
     t.integer "case_detail_id"
