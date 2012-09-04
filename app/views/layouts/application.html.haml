@@ -27,7 +27,8 @@
               -if can? :read, CaseDetail
                 %li= link_to "Cases", case_details_path
               %li= link_to "Calendar", calendar_index_path
-              %li= link_to "Reports", "#"
+              -if can? :read, Report
+                %li=link_to "Reports", "#"
             =render 'layouts/user_menu'
 
     .container-fluid

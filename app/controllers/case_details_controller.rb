@@ -10,6 +10,7 @@ class CaseDetailsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -53,5 +54,9 @@ class CaseDetailsController < ApplicationController
 
   def find_case_detail
     @case_detail = CaseDetail.find(params[:id])
+
+    unless (current_user.has_role?(:admin) || current_user.has_role?(:super_admin)) || (@case_detail.user_id == current_user.id)
+      redirect_to case_details_path, alert: "You are not allowed to view or alter this case"
+    end
   end
 end

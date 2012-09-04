@@ -21,13 +21,21 @@ class CaseDetail < ActiveRecord::Base
   accepts_nested_attributes_for :complainants, :allow_destroy => true,:reject_if => :all_blank
   
   def get_status_highlight
-    case self.status.name
-    when "Pending", "Trial Date Set"
-      "danger"
-    when "Awaiting Judgment", "Tried"
-      "info"
-    when "Convicted", "Withdrawn","Acquited" ,"Completed","" 
-      "success"
+    if self.status
+      case self.status.name
+        when   "Finalized - Convicted"
+          "danger"
+        when "Pending Committal to HC"
+          "info"
+        when "Finalized - Acquitted"
+          "success"
+        when "Pending Trial"
+          ""
+        when "Pending Judgement"
+          ""
+        else
+          ""
+      end
     else
       ""
     end

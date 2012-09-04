@@ -24,6 +24,6 @@
         %td= case_detail.date_trial_concluded
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(case_detail), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), case_detail_path(case_detail), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
 
 = link_to t('.new', :default => t("helpers.links.new")), new_case_detail_url, :class => 'btn btn-primary'

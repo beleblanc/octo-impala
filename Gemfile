@@ -31,7 +31,7 @@ gem 'cancan'
 gem 'rolify'
 gem 'icalendar'
 gem 'ransack'
-
+gem 'lazy_high_charts'
 #gem 'meta_search'# '~> 1.1.0'
 gem 'simple_form'
 #gem 'client_side_validations'
@@ -41,7 +41,7 @@ gem 'rails_admin'
 #gem 'will_paginate', '> 3.0'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
+gem 'pg_search'
 gem 'debugger', group: [:development,:test]
 # Use unicorn as the app server
 # gem 'unicorn'

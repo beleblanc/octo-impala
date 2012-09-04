@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
     self.email
   end
 
+  def name
+    self.email
+  end
+
 end

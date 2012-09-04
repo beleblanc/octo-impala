@@ -28,16 +28,8 @@
   #Court_Ruling.tab-pane
     =render 'court_ruling'
 
-
-
-
-
-
-
-
-
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), case_detail_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(@case_detail), :class => 'btn'
-  -if can? :manage, CaseDetail
+  -if can? :destroy, CaseDetail
     = link_to t('.destroy', :default => t("helpers.links.destroy")), case_detail_path(@case_detail), :method => "delete", :data => {:confirm => "Are you sure?"}, :class => 'btn btn-danger'
