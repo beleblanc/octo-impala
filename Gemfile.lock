@@ -33,6 +33,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
+    bullet (4.1.6)
+      uniform_notifier (~> 1.0.0)
     cancan (1.6.8)
     chosen-rails (0.9.8.2)
       railties (~> 3.0)
@@ -188,6 +190,7 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    uniform_notifier (1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
 
@@ -195,6 +198,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bullet
   cancan
   chosen-rails
   coffee-rails (~> 3.2.1)

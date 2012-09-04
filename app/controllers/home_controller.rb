@@ -6,6 +6,8 @@ class HomeController < ApplicationController
 
 
       @graph = Report.case_type_report(@cases, current_user)
+
+      @status = Report.status_type_report(@cases,current_user)
     end
 
   end

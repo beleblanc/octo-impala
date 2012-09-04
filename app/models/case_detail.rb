@@ -1,5 +1,8 @@
 class CaseDetail < ActiveRecord::Base
   include PgSearch
+  pg_search_scope :search, against:[:rcci,:court_case_number],
+                  using:{tsearch:{dictionary:"english"}},
+                  associated_against:{region: :name, status: :name, charges: :name}
 
   attr_accessible :accuseds_attributes, :complainants_attributes,:prosecutor_id, :judge_id, :rcci,
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,
@@ -32,15 +35,24 @@ class CaseDetail < ActiveRecord::Base
         when "Finalized - Acquitted"
           "success"
         when "Pending Trial"
-          ""
+          "primary"
         when "Pending Judgement"
-          ""
+          "warning"
         else
           ""
       end
     else
       ""
     end
+  end
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      scoped
+    end
+
   end
 
 

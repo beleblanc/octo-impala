@@ -1,0 +1,19 @@
+---
+statuses_0001:
+  id: '7'
+  name: Withdrawn
+statuses_0002:
+  id: '8'
+  name: Finalized - Convicted
+statuses_0003:
+  id: '4'
+  name: Pending Judgement
+statuses_0004:
+  id: '2'
+  name: Pending Trial
+statuses_0005:
+  id: '6'
+  name: Finalized - Acquitted
+statuses_0006:
+  id: '1'
+  name: Pending Committal to HC

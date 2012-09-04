@@ -1,0 +1,13 @@
+---
+relations_0001:
+  id: '1'
+  name: Sister
+relations_0002:
+  id: '2'
+  name: Brother
+relations_0003:
+  id: '3'
+  name: Father
+relations_0004:
+  id: '4'
+  name: Mother

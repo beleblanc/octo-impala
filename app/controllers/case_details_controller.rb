@@ -3,9 +3,9 @@ class CaseDetailsController < ApplicationController
 
   def index
     if current_user.has_role?(:admin) || current_user.has_role?(:super_admin)
-      @case_details = CaseDetail.all
+      @case_details = CaseDetail.includes(:status,:constituency).all
     else
-      @case_details = CaseDetail.where(:user_id => current_user.id)
+      @case_details = CaseDetail.includes(:status,:constituency).where(:user_id => current_user.id)
     end
   end
 

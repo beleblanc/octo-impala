@@ -1,0 +1,16 @@
+---
+judges_0001:
+  id: '1'
+  first_name: Judge
+  surname: '1'
+  sex: M
+judges_0002:
+  id: '2'
+  first_name: Judge
+  surname: '2'
+  sex: F
+judges_0003:
+  id: '3'
+  first_name: Judge
+  surname: '3'
+  sex: F

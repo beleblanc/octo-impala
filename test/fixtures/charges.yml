@@ -1,0 +1,31 @@
+---
+charges_0001:
+  id: '1'
+  name: Rape
+charges_0002:
+  id: '2'
+  name: Murder
+charges_0003:
+  id: '3'
+  name: ! 'Assault GBH '
+charges_0004:
+  id: '4'
+  name: Sodomy
+charges_0005:
+  id: '5'
+  name: Incest
+charges_0006:
+  id: '7'
+  name: Culpable Homicide
+charges_0007:
+  id: '8'
+  name: Assault Common
+charges_0008:
+  id: '9'
+  name: Indecent Assault
+charges_0009:
+  id: '10'
+  name: Human Assault
+charges_0010:
+  id: '11'
+  name: ! 'Attempted Rape '

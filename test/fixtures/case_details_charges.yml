@@ -1,0 +1,28 @@
+---
+case_details_charges_0001:
+  case_detail_id: '3'
+  charge_id: '1'
+case_details_charges_0002:
+  case_detail_id: '3'
+  charge_id: '3'
+case_details_charges_0003:
+  case_detail_id: '3'
+  charge_id: '2'
+case_details_charges_0004:
+  case_detail_id: '4'
+  charge_id: '2'
+case_details_charges_0005:
+  case_detail_id: '4'
+  charge_id: '3'
+case_details_charges_0006:
+  case_detail_id: '5'
+  charge_id: '2'
+case_details_charges_0007:
+  case_detail_id: '5'
+  charge_id: '3'
+case_details_charges_0008:
+  case_detail_id: '1'
+  charge_id: '1'
+case_details_charges_0009:
+  case_detail_id: '2'
+  charge_id: '3'

@@ -1,0 +1,43 @@
+---
+users_0001:
+  id: '2'
+  email: lindiwe@caultive.com
+  encrypted_password: $2a$10$keswqJysLjkTdld9inQB7uJFnLBkqHNTYbz/4BFZiYTO46SfotTdK
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: '0'
+  current_sign_in_at: !!null 
+  last_sign_in_at: !!null 
+  current_sign_in_ip: !!null 
+  last_sign_in_ip: !!null 
+  created_at: '2012-08-21 09:54:19.918924'
+  updated_at: '2012-08-21 09:54:19.918924'
+users_0002:
+  id: '1'
+  email: ben@caultive.com
+  encrypted_password: $2a$10$mWA75TbU9Pj9KdV1srE0wegKVaH6HzhYnoLAVNoO9bMERYh3MhPZq
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: '16'
+  current_sign_in_at: '2012-09-04 07:15:43.818297'
+  last_sign_in_at: '2012-09-03 07:57:02.466147'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: '2012-08-21 09:22:51.225746'
+  updated_at: '2012-09-04 07:15:43.843664'
+users_0003:
+  id: '3'
+  email: sihle@caultive.com
+  encrypted_password: $2a$10$vIFVcoSARbquLx/vG.e02OJUaMEV5MEScWeOqvdgDHWzSgJH2BN9C
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: '4'
+  current_sign_in_at: '2012-09-04 08:40:23.481426'
+  last_sign_in_at: '2012-09-04 07:28:54.616751'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: '2012-08-27 13:56:23.245574'
+  updated_at: '2012-09-04 08:40:23.482577'

@@ -1,0 +1,37 @@
+---
+constituencies_0001:
+  id: '1'
+  name: Manzini
+  region_id: '2'
+constituencies_0002:
+  id: '2'
+  name: Constituency1
+  region_id: '4'
+constituencies_0003:
+  id: '3'
+  name: Constituency1
+  region_id: '3'
+constituencies_0004:
+  id: '4'
+  name: Constituency1
+  region_id: '2'
+constituencies_0005:
+  id: '5'
+  name: Constituency1
+  region_id: '1'
+constituencies_0006:
+  id: '6'
+  name: Constituency2
+  region_id: !!null 
+constituencies_0007:
+  id: '7'
+  name: Constituency2
+  region_id: '3'
+constituencies_0008:
+  id: '8'
+  name: Constituency2
+  region_id: '2'
+constituencies_0009:
+  id: '9'
+  name: Constituency2
+  region_id: '1'

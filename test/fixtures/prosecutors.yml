@@ -1,0 +1,19 @@
+---
+prosecutors_0001:
+  id: '1'
+  first_name: Prosecutor
+  surname: '1'
+  sex: F
+  region_id: '1'
+prosecutors_0002:
+  id: '2'
+  first_name: Prosecutor
+  surname: '2'
+  sex: F
+  region_id: '2'
+prosecutors_0003:
+  id: '3'
+  first_name: Prosecutor
+  surname: '4'
+  sex: M
+  region_id: '4'

@@ -1,0 +1,22 @@
+---
+roles_0001:
+  id: '1'
+  name: admin
+  resource_id: !!null 
+  resource_type: !!null 
+  created_at: '2012-08-28 20:05:10.731491'
+  updated_at: '2012-08-28 20:05:10.731491'
+roles_0002:
+  id: '2'
+  name: super_admin
+  resource_id: !!null 
+  resource_type: !!null 
+  created_at: '2012-09-02 16:17:20.017376'
+  updated_at: '2012-09-02 16:17:20.017376'
+roles_0003:
+  id: '3'
+  name: prosecutor
+  resource_id: !!null 
+  resource_type: !!null 
+  created_at: '2012-09-02 16:17:27.265542'
+  updated_at: '2012-09-02 16:17:27.265542'

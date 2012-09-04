@@ -43,6 +43,7 @@ gem 'rails_admin'
 # gem 'jbuilder'
 gem 'pg_search'
 gem 'debugger', group: [:development,:test]
+gem 'bullet' ,:group => :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
