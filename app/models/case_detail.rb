@@ -1,4 +1,6 @@
 class CaseDetail < ActiveRecord::Base
+  include PgSearch
+
   attr_accessible :accuseds_attributes, :complainants_attributes,:prosecutor_id, :judge_id, :rcci,
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,
                   :date_reported, :date_submitted, :action_taken, :status_id, :comment, :date_trial_commenced,
@@ -41,6 +43,6 @@ class CaseDetail < ActiveRecord::Base
     end
   end
 
-  2.hours
+
 end
 
