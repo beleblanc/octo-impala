@@ -38,7 +38,11 @@ class CasesDatatable
     case_detail = case_detail.page(page).per_page(per_page)
 
     if params[:sSearch].present?
-      case_detail = case_detail.text_search(params[:sSearch])
+      if current_user.has_role? :admin
+        case_detail = case_detail.text_search(params[:sSearch])
+      else
+        case_detail = case_detail.text_search(params[:sSearch]).where(:user_id=> current_user.id)
+      end
     end
   end
 

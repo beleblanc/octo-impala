@@ -8,10 +8,11 @@ class CaseDetail < ActiveRecord::Base
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,
                   :date_reported, :date_submitted, :action_taken, :status_id, :comment, :date_trial_commenced,
                   :date_trial_concluded, :judgment, :sentence, :complainant, :accused, :reason_for_acquittal,
-                  :judge_remarks,:charge_ids ,:user_id
+                  :judge_remarks,:charge_ids ,:user_id, :attachments_attributes
 
   has_many :accuseds    , :dependent => :destroy
   has_many :complainants, :dependent => :destroy
+  has_many :attachments, :as => :attacheable
   belongs_to :constituency
   belongs_to :region
   belongs_to :judge
@@ -24,6 +25,7 @@ class CaseDetail < ActiveRecord::Base
 
   accepts_nested_attributes_for :accuseds , :allow_destroy => true,:reject_if => :all_blank
   accepts_nested_attributes_for :complainants, :allow_destroy => true,:reject_if => :all_blank
+    accepts_nested_attributes_for :attachments, :allow_destroy => true,:reject_if => :all_blank
   
   def get_status_highlight
     if self.status

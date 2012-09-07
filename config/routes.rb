@@ -6,6 +6,7 @@ DPPPro::Application.routes.draw do
   devise_for :users
 
   resources :case_details
+  resources :attachments
 
   get "home/index"
 

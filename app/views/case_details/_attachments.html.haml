@@ -1,0 +1,8 @@
+.well
+  =image_tag "icons/#{f.icon}.png",alt: "Attachment icon",class:"pull-left" unless f.icon == ""
+  %h4
+    =link_to f.name,f.file.url
+  %hr
+  %p=f.description
+  .cf
+

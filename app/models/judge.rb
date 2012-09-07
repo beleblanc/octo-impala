@@ -6,6 +6,6 @@ class Judge < ActiveRecord::Base
   validates :surname, :presence => true
 
   def to_s
-    "Hon. #{first_name} #{surname}"
+    "Magistrate #{first_name} #{surname}"
   end
 end

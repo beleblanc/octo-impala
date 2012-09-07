@@ -1,0 +1,9 @@
+%fieldset
+  .well
+    =f.input :name
+    =f.input :description,input_html:{class:"input-xxlarge", rows:"4"}
+    =f.file_field :file
+    =f.hidden_field :_destroy
+    .cf
+    =link_to "Remove", '#', class: "remove_fields btn btn-mini btn-danger"
+    .cf

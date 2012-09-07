@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903074956) do
+ActiveRecord::Schema.define(:version => 20120907082905) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(:version => 20120903074956) do
     t.integer  "case_detail_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "attacheable_id"
+    t.string   "attacheable_type"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "case_details", :force => true do |t|
@@ -162,9 +175,14 @@ ActiveRecord::Schema.define(:version => 20120903074956) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first_name"
+    t.string   "surname"
+    t.integer  "region_id"
+    t.string   "sex"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["region_id"], :name => "index_users_on_region_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|

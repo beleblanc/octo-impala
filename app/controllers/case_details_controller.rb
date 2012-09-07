@@ -7,6 +7,11 @@ class CaseDetailsController < ApplicationController
     else
       @case_details = CaseDetail.includes(:status,:constituency).where(:user_id => current_user.id)
     end
+
+    respond_to do |format|
+      format.html
+      format.json {render json: CasesDatatable(view_context)}
+    end
   end
 
   def show

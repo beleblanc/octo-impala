@@ -11,6 +11,8 @@
       %a{href:"#Accused", data:{toggle:"tab"}} Accused(s)
     %li
       %a{href:"#Court_Ruling", data:{toggle:"tab"}} Court Ruling
+    %li
+      %a{href:"#Attachments", data:{toggle:"tab"}} Attachment(s)
   -if @case_detail.user_id.nil?
     =f.hidden_field :user_id , :value => current_user.id
   .tab-content
@@ -22,18 +24,22 @@
       
       = f.simple_fields_for :complainants do |complainant|
         =render 'complainant_fields', f:complainant
-      =link_to_add_fields "Add +",f, :complainants
+      =link_to_add_fields "Add Complainant",f, :complainants
       
     #Accused.tab-pane
       
       = f.simple_fields_for :accuseds do |accused|
         =render 'accused_fields', f:accused
-      =link_to_add_fields "Add +",f, :accuseds
+      =link_to_add_fields "Add Accused",f, :accuseds
  
     #Court_Ruling.tab-pane
       
       =render 'court_ruling_fields', f:f
-  
+      
+    #Attachments.tab-pane
+      =f.simple_fields_for :attachments do |attachment|
+        =render 'attachment_fields', f:attachment  
+      =link_to_add_fields "Add Attachment",f,:attachments
   .form-actions
     = f.input :status_id, collection: Status.order(:name), label_method: :to_s, value_method: :id
     = f.button :submit, :class => 'btn-primary'
