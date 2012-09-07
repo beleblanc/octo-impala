@@ -1,5 +1,5 @@
 class Attachment < ActiveRecord::Base
-  attr_accessible :description,  :name, :file
+  attr_accessible :description,:name, :file
   belongs_to :attacheable, :polymorphic => true
   has_attached_file :file
   

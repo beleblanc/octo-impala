@@ -2,7 +2,7 @@
   %p
     %strong= @model_class.human_attribute_name(:prosecutor_id) + ':'
     %br
-    = @case_detail.prosecutor
+    = @case_detail.user.name
   %p
     %strong= @model_class.human_attribute_name(:judge_id) + ':'
     %br

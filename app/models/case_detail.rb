@@ -16,7 +16,7 @@ class CaseDetail < ActiveRecord::Base
   belongs_to :constituency
   belongs_to :region
   belongs_to :judge
-  belongs_to :prosecutor
+
   belongs_to :action
   belongs_to :status
   belongs_to :user

@@ -1,5 +1,10 @@
 .well
-  = f.input :prosecutor_id ,collection:Prosecutor.all,  label_method: :to_s, value_method: :id ,wrapper_html:{class:"pull-left"}
+  -if current_user.has_role? :admin
+    = f.input :user_id ,collection:User.all,  label_method: :name, value_method: :id ,wrapper_html:{class:"pull-left"}
+  -elsif @case_detail.user_id.nil?
+    =f.hidden_field :user_id, value: current_user.id
+  -else
+    =f.hidden_field :user_id
   = f.input :judge_id, collection:Judge.all, label_method: :to_s, value_method: :id,wrapper_html:{class:"pull-left offset1"}
   .cf
   = f.input :rcci,wrapper_html:{class:"pull-left"}

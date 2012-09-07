@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :region
+  has_many :case_details
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids,:first_name,:surname,:region,:sex
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids,:first_name,:surname,:region_id,:sex
   # attr_accessible :title, :body
 
   def to_s
@@ -15,7 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    self.email
+    "#{surname}, #{first_name}"
   end
 
 end

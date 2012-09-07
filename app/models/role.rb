@@ -3,6 +3,6 @@ class Role < ActiveRecord::Base
   belongs_to :resource, :polymorphic => true
   extend Rolify
 
-  attr_accessible :name
+  attr_accessible :name,:user_ids
   scopify
 end
