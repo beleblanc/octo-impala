@@ -37,11 +37,15 @@ jQuery ->
 			$('#case_detail_constituency_id').hide()
 			$('#case_detail_constituency_id').empty()
 			
-	$('.datatable').dataTable	
-		sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-		sPaginationType: "bootstrap",
-		bJQueryUI: true,
-    bProcessing: true
-    bServerSide: true
-    sAjaxSource: $('.datatable').data('source')
+	$('#caseTable').dataTable
+    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+    sPaginationType: "bootstrap",
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    sAjaxSource: $('#caseTable').data('source')#,
+    fnCreatedRow: (nRow, aaData, iDisplayIndex) ->
+      $(nRow).addClass( $(aaData[0]).attr('class'))
+
+
 	$('#case_detail_charge_ids').chosen()

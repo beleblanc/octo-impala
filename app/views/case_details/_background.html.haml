@@ -2,7 +2,7 @@
   %p
     %strong= @model_class.human_attribute_name(:prosecutor_id) + ':'
     %br
-    = @case_detail.user.name
+    = @case_detail.user.name if @case_detail.user.present?
   %p
     %strong= @model_class.human_attribute_name(:judge_id) + ':'
     %br
@@ -18,7 +18,7 @@
   %p
     %strong= @model_class.human_attribute_name(:court_type) + ':'
     %br
-    = @case_detail.court_type
+    = @case_detail.court_type_display
     %p
       %strong Charges
       %br

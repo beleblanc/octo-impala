@@ -2,15 +2,15 @@ class CaseDetailsController < ApplicationController
   before_filter :find_case_detail, only: [:edit,:update, :show]
 
   def index
-    if current_user.has_role?(:admin) || current_user.has_role?(:super_admin)
-      @case_details = CaseDetail.includes(:status,:constituency).all
-    else
-      @case_details = CaseDetail.includes(:status,:constituency).where(:user_id => current_user.id)
-    end
+    #if current_user.has_role?(:admin) || current_user.has_role?(:super_admin)
+    #  @case_details = CaseDetail.includes(:status,:constituency).all
+    #else
+    #  @case_details = CaseDetail.includes(:status,:constituency).where(:user_id => current_user.id)
+    #end
 
     respond_to do |format|
       format.html
-      format.json {render json: CasesDatatable(view_context)}
+      format.json {render json: CasesDatatable.new(view_context)}
     end
   end
 

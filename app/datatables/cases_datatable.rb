@@ -1,5 +1,6 @@
 class CasesDatatable
-  delegate :params, :h, :link_to, to: :@view
+  delegate :url_helpers, to: 'Rails.application.routes'
+  delegate :params, :h, :link_to, :current_user, to: :@view
   
   def initialize(view)
     @view = view
@@ -11,19 +12,21 @@ class CasesDatatable
       iTotalRecords: CaseDetail.count,
       iTotalDisplayRecords: case_details.length,
       aaData: data
+
     }
   end
   private
   def data
     case_details.map do |cased|
       [
-        link_to(cased.court_case_number,cased.court_case_number.to_s),
+        link_to(cased.court_case_number,cased,:class=>"#{cased.get_status_highlight}"),
         h(cased.rcci),
         h(cased.date_of_offence),
-        h(cased.constituency_id),
+        h(cased.constituency),
         h(cased.status),
         h(cased.date_trial_commenced),
-        h(cased.date_trial_concluded)
+        h(cased.date_trial_concluded),
+        link_to("Edit",url_helpers.edit_case_detail_path(cased),:class=>"btn btn-mini")
       ]
     end
   end
@@ -35,15 +38,20 @@ class CasesDatatable
   def fetch_cases
 
     case_detail = CaseDetail.order("#{sort_column} #{sort_direction}")
-    case_detail = case_detail.page(page).per_page(per_page)
+    case_detail = case_detail.page(page).per(per_page)
 
     if params[:sSearch].present?
       if current_user.has_role? :admin
-        case_detail = case_detail.text_search(params[:sSearch])
+        case_detail = case_detail.search_text(params[:sSearch])
       else
-        case_detail = case_detail.text_search(params[:sSearch]).where(:user_id=> current_user.id)
+        case_detail = case_detail.search_text(params[:sSearch]).where(:user_id=> current_user.id)
       end
+    elsif current_user.has_role? :admin
+      case_detail = case_detail.scoped
+    else
+      case_detail = case_detai.where(:user_id=> current_user.id)
     end
+    case_detail
   end
 
   def page
