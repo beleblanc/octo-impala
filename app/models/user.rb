@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
     "#{surname}, #{first_name}"
   end
 
+
+  def self.ransackable_attributes(auth_object = nil)
+          super & %w"first_name surname sex email"
+      end
 end

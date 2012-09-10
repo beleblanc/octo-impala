@@ -8,4 +8,8 @@ class Judge < ActiveRecord::Base
   def to_s
     "Magistrate #{first_name} #{surname}"
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+          super & %w"first_name surname sex "
+      end
 end

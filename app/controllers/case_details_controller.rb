@@ -1,5 +1,7 @@
 class CaseDetailsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :find_case_detail, only: [:edit,:update, :show]
+
 
   def index
     #if current_user.has_role?(:admin) || current_user.has_role?(:super_admin)

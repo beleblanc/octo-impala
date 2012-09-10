@@ -7,8 +7,13 @@ jQuery ->
 
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('fieldset').slideUp()
+    $(this).closest('fieldset').slideUp().remove()
     event.preventDefault()
+
+  $('form').on 'click', '.remove_search_fields', (event) ->
+      $(this).prev('input[type=hidden]').val('1')
+      $(this).closest('fieldset').remove()
+      event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()
@@ -49,3 +54,8 @@ jQuery ->
 
 
 	$('#case_detail_charge_ids').chosen()
+
+$('#searchTable').dataTable
+    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+    sPaginationType: "bootstrap",
+    bJQueryUI: true

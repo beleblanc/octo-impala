@@ -1,2 +1,39 @@
-%h1 Reports#index
-%p Find me in app/views/reports/index.html.haml
+- model_class = CaseDetail
+=search_form_for @search, url: reports_index_path, method: :post do |f|
+  =f.condition_fields do |c|
+    =render 'condition_fields', f: c
+  =link_to_add_search_fields("Add Criteria",f, :condition)
+
+  =f.submit "Search"
+.cf
+.well.pull-right
+  %h3
+    Matching Criteria:  #{@case_details.count}
+.cf
+
+%table#searchTable.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:court_case_number)
+      %th= model_class.human_attribute_name(:rcci)
+      %th= model_class.human_attribute_name(:date_of_offence)
+      %th= model_class.human_attribute_name(:constituency_id)
+      %th= model_class.human_attribute_name(:status)
+      %th Trial Commenced
+      %th Trial Concluded
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @case_details.each do |case_detail|
+      %tr{class: case_detail.get_status_highlight}
+        %td= link_to case_detail.court_case_number, case_detail_path(case_detail)
+        %td= case_detail.rcci
+        %td= case_detail.date_of_offence
+        %td= case_detail.constituency
+        %td= case_detail.status
+        %td= case_detail.date_trial_commenced
+        %td= case_detail.date_trial_concluded
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(case_detail), :class => 'btn btn-mini'
+
+=link_to "Export to CSV", reports_index_path(params.merge(:format=>"csv",:method=>:post)), :class => "btn btn-primary"
+=link_to "Export to Excel", reports_index_path(params.merge(:format=>"xls", method: :post)), :class => "btn btn-primary"

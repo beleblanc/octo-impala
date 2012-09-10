@@ -1,7 +1,7 @@
 DPPPro::Application.routes.draw do
 
 
-  get "reports/index"
+  match  "reports/" => "reports#index", as: :reports_index
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

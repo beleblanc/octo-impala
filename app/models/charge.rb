@@ -5,4 +5,8 @@ class Charge < ActiveRecord::Base
   def to_s
     name    
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+          super & %w"name"
+      end
 end

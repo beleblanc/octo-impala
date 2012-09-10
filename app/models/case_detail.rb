@@ -70,6 +70,17 @@ class CaseDetail < ActiveRecord::Base
 
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+        super & %w"rcci court_case_number court_type date_of_offence date_reported date_submitted date_trial_commenced date_trial_concluded judgment sentence"
+  end
 
+  def self.to_csv(records,options={})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      records.each do |cased|
+        csv << cased.attributes.values_at(*column_names)
+      end
+    end
+  end
 end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120907103023) do
+ActiveRecord::Schema.define(:version => 20120910112950) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -38,18 +38,16 @@ ActiveRecord::Schema.define(:version => 20120907103023) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "case_details", :force => true do |t|
-    t.integer  "prosecutor_id",        :null => false
+  create_table "case_details",      :force => true do |t|
     t.integer  "judge_id",             :null => false
     t.string   "rcci"
-    t.string   "court_case_number",    :null => false
+    t.string   "court_case_number"  ,    :null => false
     t.integer  "court_type"
     t.date     "date_of_offence"
     t.integer  "region_id"
     t.integer  "constituency_id"
     t.date     "date_reported"
     t.date     "date_submitted"
-    t.integer  "action_id"
     t.integer  "status_id"
     t.text     "comment"
     t.date     "date_trial_commenced"

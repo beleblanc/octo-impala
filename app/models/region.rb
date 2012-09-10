@@ -7,4 +7,8 @@ class Region < ActiveRecord::Base
     "#{name}"
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+        super & ['name']
+    end
+
 end
