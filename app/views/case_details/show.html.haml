@@ -38,4 +38,5 @@
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), case_detail_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_case_detail_path(@case_detail), :class => 'btn'
+  = link_to "Delete", case_detail_path(@case_detail), :method=>:destroy, :alert=>"Are you sure", :class=>"btn btn-danger" if current_user.has_role? :admin
 

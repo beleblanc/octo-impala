@@ -1,6 +1,8 @@
 class Report
 include LazyHighCharts
 
+
+  #Creating case type report for selected user
   def self.case_type_report(data, user)
   @case = HighChart.new('column') do |c|
       Charge.all.each do |m|
@@ -13,7 +15,7 @@ include LazyHighCharts
 
     @case
   end
-
+  #creating status type report for selected user
   def self.status_type_report(data, user)
     @status = HighChart.new('column') do |c|
           Status.all.each do |m|
@@ -26,7 +28,7 @@ include LazyHighCharts
 
         @status
   end
-
+  #setting options for chart
   def self.set_options(block_variable, options={})
 
     block_variable.legend({:align => 'right',
@@ -45,6 +47,19 @@ include LazyHighCharts
     block_variable.options[:yAxis][:title] = {:text=>options[:y_axis_title]}
 
   end
+
+#generating the reports as attachments and then mailing them
+def self.generate_weekly_report
+  @status = Status.all.each.map {|map| [map.name,map.case_details.count]}
+  @charges = Charge.all.each.map {|map| [map.name,map.case_details.where(:date_trial_commenced => Date.today.beginning_of_week..Date.today.end_of_week).count]}
+  Role.find_by_name(:admin).users.each { |user| ReportNotification.weekly_report(user,@status,@charges).deliver}
+end
+
+def self.generate_monthly_report
+  @status = Status.all.each.map {|map| [map.name,map.case_details.count]}
+  @charges = Charge.all.each.map {|map| [map.name,map.case_details.where(:date_trial_commenced => Date.today.beginning_of_month..Date.today.end_of_month).count]}
+  Role.find_by_name(:admin).users.each { |user| ReportNotification.monthly_report(user,@status,@charges).deliver}
+end
 
 
 end

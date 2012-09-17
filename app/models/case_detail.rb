@@ -2,7 +2,7 @@ class CaseDetail < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_text, against:[:rcci,:court_case_number],
                   using:{tsearch:{dictionary:"english", :prefix=>true}},
-                  associated_against:{region: :name, status: :name, charges: :name}
+                  associated_against:{region: :name, status: :name, charges: :name, constituency: :name}
 
   attr_accessible :accuseds_attributes, :complainants_attributes,:prosecutor_id, :judge_id, :rcci,
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,

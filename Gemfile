@@ -37,6 +37,7 @@ gem 'lazy_high_charts'
 gem 'simple_form'
 #gem 'client_side_validations'
 gem 'rails_admin'
+gem 'whenever', :require => false
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'will_paginate', '> 3.0'
@@ -47,7 +48,7 @@ gem 'debugger', group: [:development,:test]
 gem 'bullet' ,:group => :development
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem "letter_opener", :group => :development
 # Deploy with Capistrano
 # gem 'capistrano'
 

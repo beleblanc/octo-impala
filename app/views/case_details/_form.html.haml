@@ -43,4 +43,5 @@
   .form-actions
     = f.input :status_id, collection: Status.order(:name), label_method: :to_s, value_method: :id
     = f.button :submit, :class => 'btn-primary'
+    
     = link_to "Cancel", case_details_path, :class => 'btn'
