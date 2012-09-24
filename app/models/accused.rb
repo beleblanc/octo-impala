@@ -1,7 +1,7 @@
 class Accused < ActiveRecord::Base
   belongs_to :case_detail
   belongs_to :relation
-  attr_accessible :date_of_birth, :first_name, :known_to_complainant, :sex, :surname, :relation_id
+  attr_accessible :age, :first_name, :known_to_complainant, :sex, :surname, :relation_id
 
 
   def self.ransackable_attributes(auth_object = nil)

@@ -2,4 +2,8 @@
   %p
     %strong Name
     %br
-      ="#{f.surname}, #{f.first_name}"
+      ="#{f.surname}, #{f.first_name}" if f.surname.present? || f.first_name.present?
+      %p
+        %strong Age
+        %br
+          ="#{f.surname}, #{f.first_name}" if f.surname.present? || f.first_name.present?      

@@ -3,8 +3,9 @@
     =f.input :first_name ,wrapper_html:{class:"pull-left"}
     =f.input :surname,wrapper_html:{class:"pull-left offset1"}
     .cf
-    =f.input :sex,collection:[["Male","M"],["Female","F"]],wrapper_html:{class:"pull-left"}
-    =f.input :date_of_birth, as: :string, input_html:{class: "datepicker"},wrapper_html:{class:"pull-left offset1"}
+    =f.input :age, wrapper_html:{class:"pull-left "}
+    =f.input :sex,collection:[["Male","M"],["Female","F"]],wrapper_html:{class:"pull-left offset1"}
+   
     .cf
     =f.hidden_field :_destroy
     =link_to "Remove", "#", class: "remove_fields btn btn-mini btn-danger"

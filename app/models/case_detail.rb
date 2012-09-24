@@ -2,7 +2,7 @@ class CaseDetail < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_text, against:[:rcci,:court_case_number],
                   using:{tsearch:{dictionary:"english", :prefix=>true}},
-                  associated_against:{region: :name, status: :name, charges: :name, constituency: :name}
+                  associated_against:{region: :name, status: :name, charges: :name, constituency: :name, user: [:first_name,:surname]}
 
   attr_accessible :accuseds_attributes, :complainants_attributes,:prosecutor_id, :judge_id, :rcci,
                   :court_case_number, :court_type, :date_of_offence, :region_id, :constituency_id,
@@ -13,6 +13,7 @@ class CaseDetail < ActiveRecord::Base
   has_many :accuseds    , :dependent => :destroy
   has_many :complainants, :dependent => :destroy
   has_many :attachments, :as => :attacheable
+  has_many :appeals
   belongs_to :constituency
   belongs_to :region
   belongs_to :judge
@@ -21,6 +22,9 @@ class CaseDetail < ActiveRecord::Base
   belongs_to :status
   belongs_to :user
   has_and_belongs_to_many :charges
+  
+  validates :court_case_number, uniqueness: true, presence:false
+  validates_presence_of :judge_id,:user_id
 
 
   accepts_nested_attributes_for :accuseds , :allow_destroy => true,:reject_if => :all_blank

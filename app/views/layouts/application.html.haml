@@ -24,9 +24,12 @@
           =link_to "DPP CM Pro", root_path, class: "brand"
           .container.nav-collapse
             %ul.nav
+              -if can? :manage, CaseDetail
+                %li= link_to "New Case", new_case_detail_path
               -if can? :read, CaseDetail
                 %li= link_to "Cases", case_details_path
-              %li= link_to "Calendar", calendar_index_path
+              -if can? :read, CaseDetail
+                %li= link_to "Calendar", calendar_index_path
               -if can? :read, Report
                 %li=link_to "Reports", reports_index_path
             =render 'layouts/user_menu'

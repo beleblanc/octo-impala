@@ -11,19 +11,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910112950) do
+ActiveRecord::Schema.define(:version => 20120921104436) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
     t.string   "surname"
     t.string   "sex"
-    t.date     "date_of_birth"
     t.boolean  "known_to_complainant"
     t.integer  "relation_id"
     t.integer  "case_detail_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.integer  "age"
   end
+
+  create_table "appeals", :force => true do |t|
+    t.integer  "accused_id"
+    t.string   "case_detail_id"
+    t.string   "court_type"
+    t.string   "case_number"
+    t.string   "prosecutor"
+    t.string   "representative"
+    t.date     "received_on"
+    t.date     "commenced_on"
+    t.date     "concluded_on"
+    t.string   "reason_for"
+    t.boolean  "conviction_appeal_allowed"
+    t.boolean  "conviction_appeal_disallowed"
+    t.boolean  "sentence_appeal_allowed"
+    t.boolean  "sentence_appeal_disallowed"
+    t.text     "conviction_disallowed_reason"
+    t.text     "sentence_disallowed_reason"
+    t.text     "new_sentence"
+    t.text     "judge_remarks"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "appeals", ["accused_id"], :name => "index_appeals_on_accused_id"
+  add_index "appeals", ["case_detail_id"], :name => "index_appeals_on_case_detail_id"
 
   create_table "attachments", :force => true do |t|
     t.string   "name"
@@ -38,10 +64,10 @@ ActiveRecord::Schema.define(:version => 20120910112950) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "case_details",      :force => true do |t|
+  create_table "case_details", :force => true do |t|
     t.integer  "judge_id",             :null => false
     t.string   "rcci"
-    t.string   "court_case_number"  ,    :null => false
+    t.string   "court_case_number",    :null => false
     t.integer  "court_type"
     t.date     "date_of_offence"
     t.integer  "region_id"
@@ -55,10 +81,11 @@ ActiveRecord::Schema.define(:version => 20120910112950) do
     t.string   "judgment"
     t.string   "sentence"
     t.text     "reason_for_acquittal"
-    t.string   "judge_remarks"
+    t.text     "judge_remarks"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "user_id"
+    t.string   "action_taken"
   end
 
   add_index "case_details", ["user_id"], :name => "index_case_details_on_user_id"
@@ -66,30 +93,6 @@ ActiveRecord::Schema.define(:version => 20120910112950) do
   create_table "case_details_charges", :id => false, :force => true do |t|
     t.integer "case_detail_id"
     t.integer "charge_id"
-  end
-
-  create_table "cases", :force => true do |t|
-    t.integer  "prosecutor_id",        :null => false
-    t.integer  "judge_id",             :null => false
-    t.string   "rcci"
-    t.string   "court_case_number",    :null => false
-    t.integer  "court_type"
-    t.date     "date_of_offence"
-    t.integer  "region_id"
-    t.integer  "constituency_id"
-    t.date     "date_reported"
-    t.date     "date_submitted"
-    t.integer  "action_taken"
-    t.integer  "status"
-    t.text     "comment"
-    t.date     "date_trial_commenced"
-    t.date     "date_trial_concluded"
-    t.string   "judgment"
-    t.string   "sentence"
-    t.text     "reason_for_acquittal"
-    t.string   "judge_remarks"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
   end
 
   create_table "charges", :force => true do |t|
@@ -100,10 +103,10 @@ ActiveRecord::Schema.define(:version => 20120910112950) do
     t.string   "first_name"
     t.string   "surname"
     t.string   "sex"
-    t.date     "date_of_birth"
     t.integer  "case_detail_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "age"
   end
 
   create_table "constituencies", :force => true do |t|

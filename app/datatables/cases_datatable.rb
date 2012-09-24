@@ -10,7 +10,7 @@ class CasesDatatable
     {
       sEcho: params[:sEcho].to_i,
       iTotalRecords: CaseDetail.count,
-      iTotalDisplayRecords: case_details.length,
+      iTotalDisplayRecords: case_details.count,
       aaData: data
 
     }
@@ -49,7 +49,7 @@ class CasesDatatable
     elsif current_user.has_role? :admin
       case_detail = case_detail.scoped
     else
-      case_detail = case_detai.where(:user_id=> current_user.id)
+      case_detail = case_detail.where(:user_id=> current_user.id)
     end
     case_detail
   end
@@ -63,7 +63,7 @@ class CasesDatatable
   end
 
   def sort_column
-    columns = %w[court_case_number rcci date_of_offence constituency status trial_commenced trial_concluded]
+    columns = %w[court_case_number rcci date_of_offence constituency_id status_id trial_commenced trial_concluded]
     columns[params[:iSortCol_0].to_i]
   end
 

@@ -1,6 +1,6 @@
 class CaseDetailsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_case_detail, only: [:edit,:update, :show]
+  before_filter :find_case_detail, only: [:edit,:update, :show, :destroy]
 
 
   def index
@@ -55,6 +55,9 @@ class CaseDetailsController < ApplicationController
   end
 
   def destroy
+    @case_detail.destroy
+    
+    redirect_to case_details_path, notice: "Case was successfully deleted"
   end
 
   private
