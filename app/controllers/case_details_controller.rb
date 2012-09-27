@@ -1,6 +1,7 @@
 class CaseDetailsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_case_detail, only: [:edit,:update, :show, :destroy]
+  load_and_authorize_resource
 
 
   def index
@@ -21,9 +22,7 @@ class CaseDetailsController < ApplicationController
   end
 
   def new
-    @case_detail = CaseDetail.new()
-    @case_detail.date_trial_commenced = params[:date_trial_commenced] if params[:date_trial_commenced].present?
-    #
+    @case_detail = CaseDetail.new(params.except(:action,:controller))
     @case_detail.accuseds.build
     @case_detail.complainants.build
   end

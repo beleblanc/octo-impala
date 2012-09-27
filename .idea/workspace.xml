@@ -2,24 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69405d92-8fe7-4ee1-9069-55833149eb96" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/report_notification/monthly_report.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/report_notification/weekly_report.html.erb" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/prosecutor.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/report_notification/monthly_report.html.haml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/report_notification/weekly_report.html.haml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20120810094454_create_prosecutors.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/attachments/files/000/000/001/original/quote.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/calendars_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/calendars_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/case_details_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/case_details_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/datatables/cases_datatable.rb" afterPath="$PROJECT_DIR$/app/datatables/cases_datatable.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/accused.rb" afterPath="$PROJECT_DIR$/app/models/accused.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/report_notification.rb" afterPath="$PROJECT_DIR$/app/mailers/report_notification.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/case_detail.rb" afterPath="$PROJECT_DIR$/app/models/case_detail.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/complainant.rb" afterPath="$PROJECT_DIR$/app/models/complainant.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/constituency.rb" afterPath="$PROJECT_DIR$/app/models/constituency.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/_accused_fields.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/_accused_fields.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/_accuseds.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/_accuseds.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/_background_fields.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/_background_fields.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/_complainant_fields.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/_complainant_fields.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/report.rb" afterPath="$PROJECT_DIR$/app/models/report.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/calendars/index.html.haml" afterPath="$PROJECT_DIR$/app/views/calendars/index.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/_court_ruling_fields.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/_court_ruling_fields.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/case_details/show.html.haml" afterPath="$PROJECT_DIR$/app/views/case_details/show.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="DPPPro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,34 +43,95 @@
       <file leaf-file-name="case_detail.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/case_detail.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="23" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.0">
+            <state line="28" column="2" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20120921104436_create_appeals.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120921104436_create_appeals.rb">
+      <file leaf-file-name="case_details_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/case_details_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="26" selection-start="614" selection-end="614" vertical-scroll-proportion="0.44708425">
+            <state line="7" column="20" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appeal.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/appeal.rb">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="28" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
+            <state line="13" column="1" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cases_datatable.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/datatables/cases_datatable.rb">
+      <file leaf-file-name="report.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/report.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="65" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
+            <state line="73" column="82" selection-start="3120" selection-end="3120" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report_notification.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mailers/report_notification.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="6" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monthly_report.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/report_notification/monthly_report.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="1" selection-start="459" selection-end="7222" vertical-scroll-proportion="-2.5507247">
+              <folding>
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#8;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#9;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#12;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#13;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#15;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#17;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#18;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#24;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#25;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#28;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#29;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#th#0;n#tr#31;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#35;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekly_report.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/report_notification/weekly_report.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="158" column="8" selection-start="7406" selection-end="7406" vertical-scroll-proportion="1.0794045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ability.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="2" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,22 +155,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/config/initializers/mime_types.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/reports/index.html.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/reports_controller.rb" />
-        <option value="$PROJECT_DIR$/app/mailers/report_notification.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/models/report.rb" />
-        <option value="$PROJECT_DIR$/app/views/report_notification/monthly_report.html.haml" />
         <option value="$PROJECT_DIR$/app/mailers/notifications.rb" />
-        <option value="$PROJECT_DIR$/app/views/report_notification/weekly_report.html.haml" />
-        <option value="$PROJECT_DIR$/app/models/case_detail.rb" />
         <option value="$PROJECT_DIR$/app/models/appeal.rb" />
         <option value="$PROJECT_DIR$/app/datatables/cases_datatable.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120921104436_create_appeals.rb" />
+        <option value="$PROJECT_DIR$/app/views/report_notification/weekly_report.html.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/calendars_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/calendars/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/case_details/_court_ruling_fields.html.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/case_details_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/case_detail.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/report.rb" />
+        <option value="$PROJECT_DIR$/app/mailers/report_notification.rb" />
+        <option value="$PROJECT_DIR$/app/views/report_notification/monthly_report.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/report_notification/monthly_report.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/report_notification/weekly_report.html.erb" />
       </list>
     </option>
   </component>
@@ -183,24 +242,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DPPPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DPPPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,6 +353,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -363,6 +426,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="datatables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,7 +525,7 @@
       </server>
     </servers>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate">
+  <component name="RunManager" selected="Rails.Development: DPPPro">
     <configuration default="false" name="db:rollback" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="DPPPro" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -619,6 +700,13 @@
       <RUBY_REMOTE_DEBUG_CONFIG NAME="LOCAL_ROOT" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -652,11 +740,25 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
+    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
+      <module name="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
+      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="config.ru" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
+      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method />
     </configuration>
     <configuration default="true" type="SporkRunConfigurationType" factoryName="Spork DRb">
@@ -677,27 +779,6 @@
       <SPORK_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <SPORK_RUN_CONFIG NAME="TEST_FRAMEWORK_ARGS" VALUE="RSPEC" />
       <SPORK_RUN_CONFIG NAME="SPORK_RUN_CONFIG" VALUE="RSPEC" />
-      <method />
-    </configuration>
-    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
-      <module name="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
-      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
-      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="config.ru" />
-      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
-      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -871,18 +952,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1276" height="778" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13743316" sideWeight="0.21956296" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16585366" sideWeight="0.7195301" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17317073" sideWeight="0.7195301" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39958376" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30385014" sideWeight="0.55528456" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2804699" sideWeight="0.4390244" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2804699" sideWeight="0.4390244" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -947,90 +1028,116 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="766" selection-end="766" vertical-scroll-proportion="0.27408993" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="120" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.6688669" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="290" selection-end="290" vertical-scroll-proportion="0.01713062" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/report_notification/weekly_report.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="453" selection-end="453" vertical-scroll-proportion="0.553542" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/report_notification.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="611" selection-end="611" vertical-scroll-proportion="0.5063291" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="52" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.62025315" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="794" selection-end="794" vertical-scroll-proportion="0.29051986" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/report.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="366" selection-end="366" vertical-scroll-proportion="0.024960998" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/report_notification/monthly_report.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="48" selection-start="52" selection-end="52" vertical-scroll-proportion="0.025437202" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.024464833" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/notifications.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="614" selection-end="614" vertical-scroll-proportion="0.4648318" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notifications/appointment_scheduler.text.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/datatables/cases_datatable.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="65" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="65" selection-start="384" selection-end="384" vertical-scroll-proportion="0.07594936" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/appeal.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
+        <state line="10" column="28" selection-start="508" selection-end="508" vertical-scroll-proportion="0.25316456" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/case_details/_background_fields.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/case_details/_court_ruling.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/calendars/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="42" selection-start="550" selection-end="550" vertical-scroll-proportion="0.6923077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/case_details/_court_ruling_fields.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="54" selection-start="291" selection-end="291" vertical-scroll-proportion="0.1923077" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/calendars_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="45" selection-start="442" selection-end="442" vertical-scroll-proportion="0.41468683" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/case_details_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="2" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/case_detail.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="23" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.0">
+        <state line="28" column="2" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120921104436_create_appeals.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/report.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="614" selection-end="614" vertical-scroll-proportion="0.44708425">
+        <state line="73" column="82" selection-start="3120" selection-end="3120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/report_notification.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/report_notification/monthly_report.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="1" selection-start="459" selection-end="7222" vertical-scroll-proportion="-2.5507247">
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#8;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#9;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#12;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#13;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#15;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#17;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#18;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#24;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#25;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#28;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#29;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#th#0;n#tr#31;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#35;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/report_notification/weekly_report.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="8" selection-start="7406" selection-end="7406" vertical-scroll-proportion="1.0794045">
           <folding />
         </state>
       </provider>

@@ -7,7 +7,7 @@
   =calendar @date do |date|
     -unless date.saturday? || date.sunday?
       %span
-        =link_to "+",new_case_detail_path(date_trial_commenced: date), class: "btn btn-mini"
+        =link_to "+",new_case_detail_path(date_reported: date), class: "btn btn-mini"
       
     =date.day
     -if @cases_by_date[date]

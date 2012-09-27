@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Monthly Report for the month of <%= @date.strftime("%B") %></title>
+</head>
+
+<body>
+
+<table width="80%" border="1">
+  <tr><th colspan="3">Monthly Report for the month of <%= @date.strftime("%B") %></th></tr>
+  <tr bgcolor="#333333">
+    <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Complainant Information</h3></th>
+  </tr>
+  <tr>
+    <td width="21%" rowspan="7" style="vertical-align:top"><strong>Age (years)</strong></td>
+    <td width="42%">0-5</td>
+    <td width="37%"><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 0..5).count%></td>
+  </tr>
+  <tr>
+    <td>6-11</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 6..11).count%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>12-17</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 12..17).count%></td>
+  </tr>
+  <tr>
+    <td>18-24</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 18..24).count%></td>
+  </tr>
+  <tr>
+    <td>25+</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where('age >= 25').count%></td>
+  </tr>
+  <tr>
+    <td>Not Stated</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: nil).count%></td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCCC" style="text-align:right"><strong>Total</strong></td>
+    <td bgcolor="#CCCCCC"><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).count%></td>
+  </tr>
+  <tr>
+    <td rowspan="4" style="vertical-align:top"><strong>Sex</strong></td>
+    <td>Female</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "F").count%></td>
+  </tr>
+  <tr>
+    <td>Male</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "M").count%></td>
+  </tr>
+  <tr>
+    <td>Not Stated</td>
+    <td><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "''").count%></td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCCC" style="text-align:right"><strong>Total</strong></td>
+    <td bgcolor="#CCCCCC"><%=  Complainant.joins(:case_detail).where('case_details.date_reported'=> @date_range).count%></td>
+  </tr>
+  <tr bgcolor="#333333">
+      <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Charges Against Accused</h3></th>
+  </tr>
+  <%Charge.all.each do |charge| %>
+      <% if charge.case_details.where(:date_reported=>@date_range).count > 0  %>
+    <tr>
+        <td colspan="2"><%= charge.name %></td>
+        <td><%= charge.case_details.where(:date_reported=>@date_range).count %></td>
+    </tr>
+      <% end %>
+  <%end %>
+  <tr bgcolor="#333333">
+        <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Case Status</h3></th>
+    </tr>
+    <%Status.all.each do |status| %>
+      <tr>
+          <td colspan="2"><%= status.name %></td>
+          <td><%= status.case_details.where(:date_reported=>@date_range).count %></td>
+      </tr>
+    <%end %>
+  <tr bgcolor="#333333">
+      <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Accused Information</h3></th>
+    </tr>
+    <tr>
+      <td width="21%" rowspan="7" style="vertical-align:top"><strong>Age (years)</strong></td>
+      <td width="42%">0-5</td>
+      <td width="37%"><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 0..5).count%></td>
+    </tr>
+    <tr>
+      <td>6-11</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 6..11).count%>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>12-17</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 12..17).count%></td>
+    </tr>
+    <tr>
+      <td>18-24</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: 18..24).count%></td>
+    </tr>
+    <tr>
+      <td>25+</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where('age >= 25').count%></td>
+    </tr>
+    <tr>
+      <td>Not Stated</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(age: nil).count%></td>
+    </tr>
+    <tr>
+      <td bgcolor="#CCCCCC" style="text-align:right"><strong>Total</strong></td>
+      <td bgcolor="#CCCCCC"><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).count%></td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="vertical-align:top"><strong>Sex</strong></td>
+      <td>Female</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "F").count%></td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "M").count%></td>
+    </tr>
+    <tr>
+      <td>Not Stated</td>
+      <td><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).where(sex: "''").count%></td>
+    </tr>
+    <tr>
+      <td bgcolor="#CCCCCC" style="text-align:right"><strong>Total</strong></td>
+      <td bgcolor="#CCCCCC"><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).count%></td>
+    </tr>
+  <tr bgcolor="#333333">
+        <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Relationship of Accused</h3></th>
+    </tr>
+    <%Relation.all.each do |relation| %>
+      <% if relation.accuseds.joins(:case_detail).where('case_details.date_reported'=>@date_range).count > 0  %>
+      <tr>
+          <td colspan="2"><%= relation.name %></td>
+          <td><%= relation.accuseds.joins(:case_detail).where('case_details.date_reported'=>@date_range).count %></td>
+      </tr>
+       <% end %>
+    <%end %>
+  <tr bgcolor="#333333">
+    <th colspan="3" scope="col"><h3 style="color:#FFF; font-family: Verdana, Geneva, sans-serif;">Court Ruling</h3></th>
+  </tr>
+  <tr>
+    <td colspan="2">Guilty</td>
+    <td><%= CaseDetail.where(judgment: "Guilty" ,:date_reported=>@date_range).count %></td>
+  </tr>
+  <tr>
+    <td colspan="2">Not Guilty</td>
+    <td><%= CaseDetail.where(judgment: "Not Guilty",:date_reported=>@date_range).count %></td>
+  </tr>
+  <tr>
+    <td colspan="2">Not Stated</td>
+    <td><%= CaseDetail.where(:date_reported=>@date_range).where('judgment != ? AND judgment != ?', "Guilty", "Not Guilty").count %></td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#CCCCCC" style="text-align:right"><strong>Total</strong></td>
+    <td bgcolor="#CCCCCC"><%=  Accused.joins(:case_detail).where('case_details.date_reported'=> @date_range).count%></td>
+  </tr>
+</table>
+</body>
+</html>

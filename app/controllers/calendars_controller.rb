@@ -6,7 +6,7 @@ class CalendarsController < ApplicationController
     else
       @case_details = CaseDetail.includes(:status).where(:user_id => current_user.id)
     end
-    @cases_by_date = @case_details.group_by(&:date_trial_commenced)
+    @cases_by_date = @case_details.group_by(&:date_reported)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     
   end

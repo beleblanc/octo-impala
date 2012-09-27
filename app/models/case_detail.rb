@@ -1,6 +1,7 @@
 class CaseDetail < ActiveRecord::Base
+
   include PgSearch
-  pg_search_scope :search_text, against:[:rcci,:court_case_number],
+  pg_search_scope :search_text, against:[:rcci,:court_case_number,:date_of_offence,:date_reported],
                   using:{tsearch:{dictionary:"english", :prefix=>true}},
                   associated_against:{region: :name, status: :name, charges: :name, constituency: :name, user: [:first_name,:surname]}
 
@@ -22,6 +23,10 @@ class CaseDetail < ActiveRecord::Base
   belongs_to :status
   belongs_to :user
   has_and_belongs_to_many :charges
+
+
+
+ # named_scope :admin_check, where(user_id: current_user.id) unless current_user.has_role? :admin
   
   validates :court_case_number, uniqueness: true, presence:false
   validates_presence_of :judge_id,:user_id
