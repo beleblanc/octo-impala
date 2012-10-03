@@ -1,6 +1,6 @@
 class CasesDatatable
   delegate :url_helpers, to: 'Rails.application.routes'
-  delegate :params, :h, :link_to, :current_user, to: :@view
+  delegate :params, :h, :link_to, :button_to,:current_user, to: :@view
   
   def initialize(view)
     @view = view
@@ -26,7 +26,10 @@ class CasesDatatable
         h(cased.status),
         h(cased.date_trial_commenced),
         h(cased.date_trial_concluded),
-        link_to("Edit",url_helpers.edit_case_detail_path(cased),:class=>"btn btn-mini")
+        "#{link_to("Edit",url_helpers.edit_case_detail_path(cased),:class=>"btn btn-mini")}
+         #{button_to( "Assign Case", {:method=> :post, controller: 'case_escalations', :case_detail_id=> cased.id,
+                                      :user_id=>current_user.id} ,:class=>"btn btn-mini") if (current_user.has_role?(:hc_prosecutor) || current_user.has_role?(:admin)) &&
+                                      (cased.status_id == 1) && (cased.case_escalation.nil?)}"
       ]
     end
   end
@@ -41,15 +44,11 @@ class CasesDatatable
     case_detail = case_detail.page(page).per(per_page)
 
     if params[:sSearch].present?
-      if current_user.has_role? :admin
-        case_detail = case_detail.search_text(params[:sSearch])
-      else
-        case_detail = case_detail.search_text(params[:sSearch]).where(:user_id=> current_user.id)
-      end
-    elsif current_user.has_role? :admin
-      case_detail = case_detail.scoped
-    else
-      case_detail = case_detail.where(:user_id=> current_user.id)
+
+        case_detail = case_detail.search_text(params[:sSearch]).get_user_cases(current_user)
+
+        else
+      case_detail = case_detail.get_user_cases(current_user)
     end
     case_detail
   end

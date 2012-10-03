@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120921104436) do
+ActiveRecord::Schema.define(:version => 20121002182235) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20120921104436) do
     t.integer  "judge_id",             :null => false
     t.string   "rcci"
     t.string   "court_case_number",    :null => false
-    t.integer  "court_type"
+    t.integer  "court_type_id"
     t.date     "date_of_offence"
     t.integer  "region_id"
     t.integer  "constituency_id"
@@ -88,12 +88,35 @@ ActiveRecord::Schema.define(:version => 20120921104436) do
     t.string   "action_taken"
   end
 
+  add_index "case_details", ["court_type_id"], :name => "index_case_details_on_court_type_id"
   add_index "case_details", ["user_id"], :name => "index_case_details_on_user_id"
 
   create_table "case_details_charges", :id => false, :force => true do |t|
     t.integer "case_detail_id"
     t.integer "charge_id"
   end
+
+  create_table "case_escalations", :force => true do |t|
+    t.integer  "case_detail_id"
+    t.integer  "user_id"
+    t.date     "approved_on"
+    t.boolean  "approved"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "case_escalations", ["case_detail_id"], :name => "index_case_escalations_on_case_detail_id"
+  add_index "case_escalations", ["user_id"], :name => "index_case_escalations_on_user_id"
+
+  create_table "case_linkages", :force => true do |t|
+    t.integer  "case_detail_id"
+    t.integer  "linked_case_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "case_linkages", ["case_detail_id"], :name => "index_case_linkages_on_case_detail_id"
+  add_index "case_linkages", ["linked_case_id"], :name => "index_case_linkages_on_linked_case_id"
 
   create_table "charges", :force => true do |t|
     t.string "name", :null => false
@@ -114,10 +137,15 @@ ActiveRecord::Schema.define(:version => 20120921104436) do
     t.integer "region_id"
   end
 
+  create_table "court_types", :force => true do |t|
+    t.string "name", :limit => 30
+  end
+
   create_table "judges", :force => true do |t|
-    t.string "first_name", :null => false
-    t.string "surname",    :null => false
+    t.string "first_name",                                         :null => false
+    t.string "surname",                                            :null => false
     t.string "sex"
+    t.string "title",      :limit => 25, :default => "Magistrate"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -157,22 +185,23 @@ ActiveRecord::Schema.define(:version => 20120921104436) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",                  :default => "", :null => false
+    t.string   "email",                                :default => "",           :null => false
+    t.string   "encrypted_password",                   :default => "",           :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
+    t.datetime "created_at",                                                     :null => false
+    t.datetime "updated_at",                                                     :null => false
     t.string   "first_name"
     t.string   "surname"
     t.integer  "region_id"
     t.string   "sex",                    :limit => 1
+    t.string   "title",                  :limit => 25, :default => "Prosecutor"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

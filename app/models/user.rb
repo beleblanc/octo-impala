@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   belongs_to :region
   has_many :case_details
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids,:first_name,:surname,:region_id,:sex
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids,:first_name,:surname,:region_id,:sex,:title
   # attr_accessible :title, :body
 
   def to_s
@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
   end
 
   def name
-    "#{surname}, #{first_name}"
+    "#{title} - #{surname}, #{first_name}"
   end
 
 
   def self.ransackable_attributes(auth_object = nil)
-          super & %w"first_name surname sex email"
+          super & %w"first_name surname sex email title"
       end
 end

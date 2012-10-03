@@ -17,6 +17,9 @@ class Ability
        can :access, :rails_admin
        can :manage, :all
        can :dashboard
+     elsif user.has_role? :hc_prosecutor
+       can :manage, CaseDetail
+
      elsif user.has_role? :prosecutor
        can :manage, CaseDetail, :user_id => user.id
      end

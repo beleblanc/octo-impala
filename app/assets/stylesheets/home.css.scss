@@ -6,3 +6,21 @@ footer{
 position:relative;
 bottom:1px;
 }
+
+.graph-container{
+  margin: 20px 0;
+  .caption{
+    text-align: center;
+  }
+}
+
+#charge_report{
+  width: 600px;
+  height:400px;
+
+}
+
+#status_report{
+  width: 400px;
+  height:400px;
+}

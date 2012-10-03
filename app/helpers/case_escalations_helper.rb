@@ -1,0 +1,2 @@
+module CaseEscalationsHelper
+end

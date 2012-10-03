@@ -1,19 +1,23 @@
 DPPPro::Application.routes.draw do
 
 
+  resources :case_details
+  resources :attachments
+  resources :case_escalations do
+    match :approve, via: :put, on: :collection
+  end
+    
+  resources :case_linkages
+
+
   match  "reports/" => "reports#index", as: :reports_index
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   devise_for :users
 
-  resources :case_details
-  resources :attachments
 
   get "home/index"
-
   get "home/about"
-  
   match "calendars/" => "calendars#index", as: :calendar_index
 
   # The priority is based upon order of creation:

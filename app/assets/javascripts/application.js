@@ -19,4 +19,6 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require chosen-jquery
 //= require highcharts
+//= require morris
+//= require raphael
 //= require_tree .

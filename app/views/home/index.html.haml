@@ -7,6 +7,7 @@
   .span5
     =high_chart("status",@status) do
       = "options.tooltip.formatter = function() {return this.series.name +': '+ this.y;}"
+  
 -else
   =render 'home/sign_in'
 

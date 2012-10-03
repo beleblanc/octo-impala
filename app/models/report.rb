@@ -6,15 +6,11 @@ include LazyHighCharts
   def self.case_type_report(data, user)
   @case = HighChart.new('column') do |c|
       Charge.all.each do |m|
-        if user.has_role? :admin
-          if m.case_details.where(:date_reported=> 3.months.ago..Date.today).count > 0
-            c.series(name: m.name, data: [m.case_details.where(:date_reported=> 3.months.ago..Date.today).count])
+
+          if m.case_details.get_user_cases(user).where(:date_reported=> 3.months.ago..Date.today).count > 0
+            c.series(name: m.name, data: [m.case_details.get_user_cases(user).where(:date_reported=> 3.months.ago..Date.today).count])
           end
-        else
-          if m.case_details.where(:date_reported=> 3.months.ago..Date.today).where(user_id: user.id).count > 0
-            c.series(name: m.name, data: [m.case_details.where(:date_reported=> 3.months.ago..Date.today).where(user_id: user.id).count])
-          end
-        end
+
       end
       c.title({ :text=>"Charges Report (90 day overview)"})
       set_options(c, :y_axis_title=> "Amount", :x_axis_title=> "Charges")
@@ -27,14 +23,8 @@ include LazyHighCharts
   def self.status_type_report(data, user)
     @status = HighChart.new('column') do |c|
           Status.all.each do |m|
-            if user.has_role? :admin
-              if m.case_details.where(:date_reported=> 3.months.ago..Date.today).count > 0
-                c.series(name: m.name, data: [m.case_details.where(:date_reported=> 3.months.ago..Date.today).count])
-              end
-            else
-              if m.case_details.where(:date_reported=> 3.months.ago..Date.today).where(user_id: user.id).count > 0
-                c.series(name: m.name, data: [m.case_details.where(:date_reported=> 3.months.ago..Date.today).where(user_id: user.id).count])
-              end
+            if m.case_details.get_user_cases(user).where(:date_reported=> 3.months.ago..Date.today).count > 0
+                c.series(name: m.name, data: [m.case_details.get_user_cases(user).where(:date_reported=> 3.months.ago..Date.today).count])
             end
           end
           c.title({ :text=>"Case Status Report (90 day overview)"})
@@ -73,6 +63,7 @@ include LazyHighCharts
   def self.generate_monthly_report
      Role.find_by_name(:admin).users.each { |user| ReportNotification.monthly_report(user).deliver}
   end
+
 
 
 end
