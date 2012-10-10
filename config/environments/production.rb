@@ -10,7 +10,7 @@ DPPPro::Application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
-
+  ActionController::Base.asset_host = "dpp.gov.sz"
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
@@ -20,6 +20,8 @@ DPPPro::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.action_mailer.default_url_options= {host: "dpp.gov.sz"}
+  config.action_mailer.delivery_method = :smtp
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -56,7 +58,7 @@ DPPPro::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
-  config.i18n.fallbacks = true
+  config.i18n.fallbacks = false
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify

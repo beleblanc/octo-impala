@@ -3,7 +3,7 @@ class Status < ActiveRecord::Base
   has_many :case_details
   
   def to_s
-    name
+    "#{name}"
   end
 
   def self.ransackable_attributes(auth_object = nil)

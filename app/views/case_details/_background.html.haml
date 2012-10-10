@@ -32,11 +32,11 @@
   %p
     %strong= @model_class.human_attribute_name(:region_id) + ':'
     %br
-    = @case_detail.region_id
+    = @case_detail.region
   %p
     %strong= @model_class.human_attribute_name(:constituency_id) + ':'
     %br
-    = @case_detail.constituency_id
+    = @case_detail.constituency
   %p
     %strong= @model_class.human_attribute_name(:date_reported) + ':'
     %br
@@ -45,6 +45,10 @@
     %strong= @model_class.human_attribute_name(:date_submitted) + ':'
     %br
     = @case_detail.date_submitted
+  %p
+    %strong= @model_class.human_attribute_name(:comment) + ':'
+    %br
+    = @case_detail.comment  
   %p
     %strong= @model_class.human_attribute_name(:date_trial_commenced) + ':'
     %br

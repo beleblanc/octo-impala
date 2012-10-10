@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002182235) do
+ActiveRecord::Schema.define(:version => 20121004123308) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -64,10 +64,15 @@ ActiveRecord::Schema.define(:version => 20121002182235) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "case_charges", :force => true do |t|
+    t.integer "case_detail_id"
+    t.integer "charge_id"
+  end
+
   create_table "case_details", :force => true do |t|
-    t.integer  "judge_id",             :null => false
+    t.integer  "judge_id",                           :null => false
     t.string   "rcci"
-    t.string   "court_case_number",    :null => false
+    t.string   "court_case_number",    :limit => 15
     t.integer  "court_type_id"
     t.date     "date_of_offence"
     t.integer  "region_id"
@@ -82,19 +87,14 @@ ActiveRecord::Schema.define(:version => 20121002182235) do
     t.string   "sentence"
     t.text     "reason_for_acquittal"
     t.text     "judge_remarks"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "user_id"
     t.string   "action_taken"
   end
 
   add_index "case_details", ["court_type_id"], :name => "index_case_details_on_court_type_id"
   add_index "case_details", ["user_id"], :name => "index_case_details_on_user_id"
-
-  create_table "case_details_charges", :id => false, :force => true do |t|
-    t.integer "case_detail_id"
-    t.integer "charge_id"
-  end
 
   create_table "case_escalations", :force => true do |t|
     t.integer  "case_detail_id"

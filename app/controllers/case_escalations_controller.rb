@@ -24,10 +24,17 @@ class CaseEscalationsController < ApplicationController
   end
 
   def approve
-      CaseEscalation.where(:id=>params[:escalation_id]).update_all(:approved_on=>Date.today, :approved=>true)
-      
-      params[:escalation_id].each do |cased|
-        escalate_case(cased)
+
+      if params[:escalation_id].present?
+        if params[:approve].present?
+          params[:escalation_id].each do |cased|
+            escalate_case(cased)
+          end
+        elsif params[:deny].present?
+          params[:escalation_id].each do |cased|
+            CaseEscalation.find(cased).delete
+          end
+        end
       end
       redirect_to case_escalations_path
   end
@@ -42,34 +49,26 @@ class CaseEscalationsController < ApplicationController
   
   def escalate_case(id)
     @case_escalation = CaseEscalation.find(id)
+    exceptions = [:court_case_number,:user_id,:status_id,:judgement,:sentence,:reason_for_acquittal,
+                  :judge_remarks,:action_taken]
+    associations = [:accuseds,:complainants,:case_charges,:attachments]
+    
     old_case = CaseDetail.find(@case_escalation.case_detail_id)
-    new_case = old_case.dup
-    new_case.court_type_id = CourtType.find_by_name("High Court").id
-    new_case.court_case_number = ' '
-    new_case.user_id = @case_escalation.user_id
-    new_case.save
-    old_case.complainants.each do |complainant|
-      new_complainant = new_case.complainants.new
-      new_complainant = complainant.dup
-      new_complainant.save
-    end
-    
-    old_case.accuseds.each do |accused|
-      new_accused = new_case.accuseds.new
-      new_accused = accused.dup
-      new_accused.save
-    end
+    new_case = CaseDetail.new
 
-    old_case.charges.each do |charge|
-      new_charge = new_case.charges.new(id: charge.id)
-      new_charge.save
-    end
-    
-    
-    old_case.case_linkages.create(:linked_case_id => new_case.id )
-    new_case.inverse_linkages.create(:linked_case_id => old_case.id)
-    old_case.status_id = Status.find_by_name("Committed to HC").id
-    old_status.save
-    
+    CaseDetail.copy_attributes_between_cases(old_case,new_case,except_list:exceptions)
+    new_case.user_id = @case_escalation.user_id
+    new_case.status_id = Status.find_by_name("Committed to HC").id
+    old_case.status_id = new_case.status_id
+    new_case.save
+    old_case.save
+    CaseDetail.copy_associations(old_case,new_case,associations:associations)
+
+    old_case.case_linkages.new(:linked_case_id => new_case.id,:case_detail_id=>old_case.id ).save
+    new_case.inverse_linkages.new(:linked_case_id => old_case.id, :case_detail_id=>new_case.id).save
+
+    @case_escalation.approved = true
+    @case_escalation.approved_on = Date.today
+    @case_escalation.save
   end
 end

@@ -1,5 +1,6 @@
 class Charge < ActiveRecord::Base
-  has_and_belongs_to_many :case_details
+  has_many :case_charges
+  has_many :case_details, through: :case_charges
   attr_accessible :name
   
   def to_s

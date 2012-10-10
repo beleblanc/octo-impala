@@ -10,6 +10,8 @@ class CaseDetail < ActiveRecord::Base
                   :date_reported, :date_submitted, :action_taken, :status_id, :comment, :date_trial_commenced,
                   :date_trial_concluded, :judgment, :sentence, :complainant, :accused, :reason_for_acquittal,
                   :judge_remarks,:charge_ids ,:user_id, :attachments_attributes
+                  
+  after_save      :calendar_notification
 
   has_many :accuseds    , :dependent => :destroy
   has_many :complainants, :dependent => :destroy
@@ -23,7 +25,8 @@ class CaseDetail < ActiveRecord::Base
   belongs_to :status
   belongs_to :user
   belongs_to :court_type
-  has_and_belongs_to_many :charges
+  has_many :case_charges
+  has_many :charges, through: :case_charges
 
   has_many :case_linkages
   has_many :linked_cases, :through => :case_linkages
@@ -62,6 +65,44 @@ class CaseDetail < ActiveRecord::Base
     else
       ""
     end
+  end
+
+  def case_number
+    if court_case_number.to_s.empty?
+      "Not Provided"
+    else
+      court_case_number
+    end
+  end
+  
+  def self.copy_attributes_between_cases(from_model, to_model, options ={})
+    return unless from_model && to_model
+    except_list = options[:except_list] || []
+    except_list << :id
+    to_model.attributes.each do |attr,val|
+        to_model[attr] = from_model[attr] unless except_list.index(attr.to_sym) 
+    end
+    to_model.save if options[:save]
+    to_model
+  end
+  
+  def self.copy_associations(from_model,to_model, options={})
+    return unless from_model && to_model && options[:associations]
+    except_list = options[:except_list] || []
+    except_list << :id
+    except_list << :case_detail_id
+    options[:associations].each do |assoc|
+      from_model.try(assoc).each do |old_assoc|
+       a = to_model.try(assoc).new do |new_assoc|
+          new_assoc.attributes.except(:created_at, :updated_at).each do |attr,val|
+            puts old_assoc[attr]
+            new_assoc[attr] = old_assoc[attr] unless except_list.index(attr.to_sym)
+          end
+        end
+       a.save
+      end
+    end
+    
   end
 
   def self.text_search(query)
@@ -109,6 +150,12 @@ class CaseDetail < ActiveRecord::Base
       where(:user_id => user.id)
     else
       self
+    end
+  end
+  
+  def calendar_notification
+    if date_trial_commenced > Date.today
+       Notifications.appointment_scheduler(user_id,id).deliver
     end
   end
 end

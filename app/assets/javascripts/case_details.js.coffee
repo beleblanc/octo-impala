@@ -50,7 +50,7 @@ jQuery ->
     bServerSide: true,
     sAjaxSource: $('#caseTable').data('source')#,
     fnCreatedRow: (nRow, aaData, iDisplayIndex) ->
-      $(nRow).addClass( $(aaData[0]).attr('class'))
+      $(nRow).addClass( $(aaData[0]).data('status'))
 
 
 	$('#case_detail_charge_ids').chosen()

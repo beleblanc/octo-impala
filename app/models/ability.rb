@@ -19,6 +19,9 @@ class Ability
        can :dashboard
      elsif user.has_role? :hc_prosecutor
        can :manage, CaseDetail
+     elsif user.has_role? :dpp
+      can :manage, CaseDetail
+      can :manage, CaseEscalation
 
      elsif user.has_role? :prosecutor
        can :manage, CaseDetail, :user_id => user.id

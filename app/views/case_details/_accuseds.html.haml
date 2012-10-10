@@ -1,9 +1,21 @@
-.well
+.well.span2
   %p
     %strong Name
     %br
-      ="#{f.surname}, #{f.first_name}" if f.surname.present? || f.first_name.present?
-      %p
-        %strong Age
-        %br
-          ="#{f.surname}, #{f.first_name}" if f.surname.present? || f.first_name.present?      
+      ="#{f.surname}, #{f.first_name}"
+  %p
+    %strong Sex 
+    %br
+      =f.sex      
+  %p
+    %strong Age 
+    %br
+      =f.age
+  %p
+    %strong Known to complainant? 
+    %br
+      =f.known_to_complainant 
+  %p
+    %strong Relation 
+    %br
+      =f.relation

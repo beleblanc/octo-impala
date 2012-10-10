@@ -30,6 +30,8 @@
                 %li= link_to "Cases", case_details_path
               -if can? :read, CaseDetail
                 %li= link_to "Calendar", calendar_index_path
+              -if can? :read, CaseEscalation
+                %li= link_to "Escalation Request(s)", case_escalations_path if CaseEscalation.where(:approved=>false).length > 0
               -if can? :read, Report
                 %li=link_to "Reports", reports_index_path
             =render 'layouts/user_menu'
@@ -51,7 +53,7 @@
             =yield
     
       %footer
-        /%p &copy; Afritech Consultants & Caultive Solutions 2012
+
     /
       Javascripts
       \==================================================

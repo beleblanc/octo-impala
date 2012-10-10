@@ -1,3 +1,4 @@
+set :output, "#{path}/log/cron.log"
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
@@ -16,5 +17,10 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
+every :saturday, at: "11:50 pm" do
+  runner "Report.generate_weekly_report"
+end
+
+every :month
 
 # Learn more: http://github.com/javan/whenever
