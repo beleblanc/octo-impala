@@ -11,7 +11,7 @@
   = f.input :court_case_number,wrapper_html:{class:"pull-left offset1"}
   .cf
   = f.input :court_type_id , collection:CourtType.order(:name),label_method: :name,value_method: :id, include_blank:true
-  = f.input :charge_ids, collection:Charge.order(:name), label_method: :name, value_method: :id, input_html:{multiple:true},:label => "Charge(s)"
+  = f.input :charge_ids , collection:Charge.order(:name) , include_blank: true,selected:"" , label_method: :name, value_method: :id, input_html: {data: {:placeholder=>"Choose charge(s)",class:"chzn-select"}, multiple: ""},:label => "Charge(s)"
   = f.input :date_of_offence, as: :string, input_html:{class: "datepicker"}
   = f.input :region_id, collection:Region.order(:name), label_method: :name, calue_method: :id,wrapper_html:{class:"pull-left"}
   = f.input :constituency_id, collection: Region.order(:name), as: :grouped_select,group_method: :constituencies ,wrapper_html:{class:"pull-left offset1"}

@@ -51,11 +51,11 @@ jQuery ->
     sAjaxSource: $('#caseTable').data('source')#,
     fnCreatedRow: (nRow, aaData, iDisplayIndex) ->
       $(nRow).addClass( $(aaData[0]).data('status'))
+  
+  $('#case_detail_charge_ids').chosen()
+	
 
-
-	$('#case_detail_charge_ids').chosen()
-
-$('#searchTable').dataTable
-    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-    sPaginationType: "bootstrap",
-    bJQueryUI: true
+	$('#searchTable').dataTable
+	    sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	    sPaginationType: "bootstrap",
+	    bJQueryUI: true

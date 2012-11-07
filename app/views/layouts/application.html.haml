@@ -31,7 +31,7 @@
               -if can? :read, CaseDetail
                 %li= link_to "Calendar", calendar_index_path
               -if can? :read, CaseEscalation
-                %li= link_to "Escalation Request(s)", case_escalations_path if CaseEscalation.where(:approved=>false).length > 0
+                %li= link_to "Escalation Request(s)", case_escalations_path
               -if can? :read, Report
                 %li=link_to "Reports", reports_index_path
             =render 'layouts/user_menu'

@@ -154,8 +154,10 @@ class CaseDetail < ActiveRecord::Base
   end
   
   def calendar_notification
-    if date_trial_commenced > Date.today
+    if date_trial_commenced
+      if (date_trial_commenced > Date.today) && date_trial_concluded.nil?
        Notifications.appointment_scheduler(user_id,id).deliver
+     end
     end
   end
 end

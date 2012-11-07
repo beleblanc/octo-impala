@@ -12,10 +12,12 @@ class Ability
      if user.has_role? :admin
        can :access, :rails_admin
        can :manage, :all
+        can :manage, CaseEscalation
        can :dashboard              # grant access to the dashboard
      elsif user.has_role? :super_admin
        can :access, :rails_admin
        can :manage, :all
+        can :manage, CaseEscalation
        can :dashboard
      elsif user.has_role? :hc_prosecutor
        can :manage, CaseDetail
