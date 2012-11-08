@@ -9,7 +9,7 @@ load "config/recipes/nodejs"
 load "config/recipes/rbenv"
 load "config/recipes/check"
 
-server "72.14.183.209", :web, :app, :db, primary: true
+server "41.215.155.123", :web, :app, :db, primary: true
 
 set :user, "deployer"
 set :application, "moj_case_management"
