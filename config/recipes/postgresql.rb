@@ -6,7 +6,16 @@ set_default(:postgresql_database) { "#{application}_production" }
 namespace :postgresql do
   desc "Install the latest stable release of PostgreSQL."
   task :install, roles: :db, only: {primary: true} do
-    run "#{sudo} add-apt-repository ppa:pitti/postgresql"
+
+    run "#{sudo} add-apt-repository ppa:pitti/postgresql",:pty => true do |ch, stream, data|
+             if data =~ /Press.\[ENTER\].to.continue/
+            #prompt, and then send the response to the remote process
+            ch.send_data(Capistrano::CLI.password_prompt("Press enter to continue:") + "\n")
+          else
+            #use the default handler for all other text
+            Capistrano::Configuration.default_io_proc.call(ch,stream,data)
+          end
+        end
     run "#{sudo} apt-get -y update"
     run "#{sudo} apt-get -y install postgresql libpq-dev"
   end
