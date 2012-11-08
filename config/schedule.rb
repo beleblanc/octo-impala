@@ -21,6 +21,8 @@ every :saturday, at: "11:50 pm" do
   runner "Report.generate_weekly_report"
 end
 
-every :month
+every :day, at: "6:50 am" do
+  runner "Notifications.daily_case_reminder.deliver"
+end
 
 # Learn more: http://github.com/javan/whenever

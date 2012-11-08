@@ -18,7 +18,7 @@ class Notifications < ActionMailer::Base
           e.end = @case.date_trial_commenced.to_datetime.end_of_day.utc
           e.end.icalendar_tzid = "UTC"
           e.organizer = "notification@dpp.gov.sz"
-          e.uid = "CaseReminder:#{@case.court_case_number}"
+         x e.uid = "CaseReminder:#{@case.court_case_number}"
           e.summary "Case Reminder: #{@case.court_case_number}"
           e.description <<-EOF
             Court case reminder for case: #{@case.court_case_number} on the #{@case.date_trial_commenced.strftime("%A, %d %B")}
@@ -33,11 +33,13 @@ class Notifications < ActionMailer::Base
     end
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.notifications.reminder.subject
-  #
+  def daily_case_reminder(date = Date.today)
+    @cases = CaseDetail.where(:date_trial_commenced => date)
+    @cases.each do |court_case|
+      @ccase = court_case
+      mail to: @ccase.user.email ,subject: "Case#: #{@ccase.court_case_number} Reminder for  #{Date.today.strftime("%A the %d of %B, %Y")}"
+    end
+  end
 
 
 
