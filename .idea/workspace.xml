@@ -4,8 +4,8 @@
     <list default="true" id="69405d92-8fe7-4ee1-9069-55833149eb96" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/prosecutor.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20120810094454_create_prosecutors.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20120816192854_rename_case_id_to_case_detail_id.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/attachments/files/000/000/001/original/quote.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
     </list>
     <ignored path="DPPPro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="rails" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="rails" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/rails">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="40" selection-start="295" selection-end="295" vertical-scroll-proportion="0.14976598">
+            <state line="6" column="20" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20120821115330_rename_case_detail_charges_columns.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20120821115330_rename_case_detail_charges_columns.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="20" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.65822786">
               <folding />
             </state>
           </provider>
@@ -78,7 +96,6 @@
         <option value="$PROJECT_DIR$/config/recipes/check.rb" />
         <option value="$PROJECT_DIR$/config/recipes/nginx.rb" />
         <option value="$PROJECT_DIR$/config/recipes/node.js" />
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/recipes/rbenv.rb" />
         <option value="$PROJECT_DIR$/config/recipes/templates/nginx_unicorn.erb" />
         <option value="$PROJECT_DIR$/config/recipes/templates/postgresql.yml.erb" />
@@ -90,6 +107,7 @@
         <option value="$PROJECT_DIR$/app/mailers/notifications.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120810124529_create_case_details.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120816192854_rename_case_id_to_case_detail_id.rb" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -268,6 +286,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DPPPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -852,14 +884,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1276" height="778" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13743316" sideWeight="0.21956296" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42682928" sideWeight="0.6343612" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42682928" sideWeight="0.6343612" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30385014" sideWeight="0.55528456" order="10" side_tool="true" content_ui="tabs" />
@@ -928,11 +960,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/notifications/reminder.text.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn_init.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="84" selection-start="1529" selection-end="1529" vertical-scroll-proportion="2.9894736" />
@@ -1018,7 +1045,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/rails">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="295" selection-end="295" vertical-scroll-proportion="0.14976598">
+        <state line="6" column="20" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120821115330_rename_case_detail_charges_columns.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="3" selection-start="651" selection-end="651" vertical-scroll-proportion="0.65822786">
           <folding />
         </state>
       </provider>

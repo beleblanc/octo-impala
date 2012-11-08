@@ -21,6 +21,18 @@ set :scm, "git"
 set :repository, "git@github.com:ZenAnthro/octo-impala.git"
 set :branch, "master"
 
+namespace :deploy do
+  task :cold do       # Overriding the default deploy:cold
+    update
+    load_schema       # My own step, replacing migrations.
+    start
+  end
+
+  task :load_schema, :roles => :app do
+    run "cd #{current_path}; rake db:schema:load"
+  end
+end
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
