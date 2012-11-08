@@ -25,11 +25,6 @@ class CreateCaseDetails < ActiveRecord::Migration
             t.timestamps
     end
 
-    drop_table :cases_charges
 
-    create_table :case_details_charges, id:false do |t|
-      t.references :case_details
-      t.references :charges
-    end
   end
 end
