@@ -38,11 +38,7 @@ class Notifications < ActionMailer::Base
   #
   #   en.notifications.reminder.subject
   #
-  def reminder
-    @greeting = "Hi"
 
-    mail to: "to@example.org"
-  end
 
 
 end

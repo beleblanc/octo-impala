@@ -50,7 +50,7 @@ gem 'bullet' ,:group => :development
 # gem 'unicorn'
 gem "letter_opener", :group => :development
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
