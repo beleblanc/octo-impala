@@ -5,7 +5,7 @@ class CaseDetail < ActiveRecord::Base
                   using:{tsearch:{dictionary:"english", :prefix=>true}},
                   associated_against:{region: :name, status: :name, charges: :name, constituency: :name, user: [:first_name,:surname]}
 
-  attr_accessible :accuseds_attributes, :complainants_attributes,:prosecutor_id, :judge_id, :rcci,
+  attr_accessible :accuseds_attributes, :complainants_attributes,:judge_id, :rcci,
                   :court_case_number, :court_type_id, :date_of_offence, :region_id, :constituency_id,
                   :date_reported, :date_submitted, :action_taken, :status_id, :comment, :date_trial_commenced,
                   :date_trial_concluded, :judgment, :sentence, :complainant, :accused, :reason_for_acquittal,
