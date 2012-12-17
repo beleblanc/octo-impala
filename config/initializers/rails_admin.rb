@@ -33,7 +33,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  config.excluded_models = [Accused, CaseDetail, Complainant,Prosecutor]
+  config.excluded_models = [Accused, CaseDetail, Complainant]
 
   # Add models here if you want to go 'whitelist mode':
   #config.included_models = [ Charge,  Constituency, Judge, Prosecutor, Region, Relation, User]
