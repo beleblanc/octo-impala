@@ -1,5 +1,8 @@
 class AppealsController < ApplicationController
   before_filter :find_appeal, only: [:show,:edit,:update,:destroy]
+  def index
+
+  end
 
   def show
   end
@@ -9,6 +12,9 @@ class AppealsController < ApplicationController
 
   def new
     @appeal = Appeal.new
+    @appeal.case_detail_id = params[:case_detail_id] if params[:case_detail_id].present?
+    @appeal.accused_id = params[:accused_id] if params[:accused_id].present?
+
   end
 
   def create
@@ -16,6 +22,8 @@ class AppealsController < ApplicationController
 
     respond_to  do |format|
       if @appeal.save!
+        @appeal.case_detail.court_type_id = CourtType.find_by_name("Appellate Court").id
+        @appeal.case_detail.save!
         format.html {redirect_to case_detail_path(@appeal.case_detail), notice:"Case Appeal was successfully created!"}
       else
         format.html{render action: "new"}

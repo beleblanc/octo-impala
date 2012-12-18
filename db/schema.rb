@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218083939) do
+ActiveRecord::Schema.define(:version => 20121218101230) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -27,10 +27,7 @@ ActiveRecord::Schema.define(:version => 20121218083939) do
 
   create_table "appeals", :force => true do |t|
     t.integer  "accused_id"
-    t.string   "case_detail_id"
-    t.string   "court_type"
     t.string   "case_number"
-    t.string   "prosecutor"
     t.string   "representative"
     t.date     "received_on"
     t.date     "commenced_on"
@@ -46,10 +43,13 @@ ActiveRecord::Schema.define(:version => 20121218083939) do
     t.text     "judge_remarks"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "case_detail_id",               :null => false
+    t.integer  "prosecutor_id"
   end
 
   add_index "appeals", ["accused_id"], :name => "index_appeals_on_accused_id"
   add_index "appeals", ["case_detail_id"], :name => "index_appeals_on_case_detail_id"
+  add_index "appeals", ["prosecutor_id"], :name => "index_appeals_on_prosecutor_id"
 
   create_table "attachments", :force => true do |t|
     t.string   "name"

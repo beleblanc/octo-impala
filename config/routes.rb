@@ -14,6 +14,9 @@ DPPPro::Application.routes.draw do
   get "appeals/destroy"
 
   resources :case_details
+
+
+  resources :appeals
   resources :attachments
   resources :case_escalations do
     match :approve, via: :put, on: :collection

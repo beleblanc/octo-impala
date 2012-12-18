@@ -16,11 +16,10 @@ class CaseDetail < ActiveRecord::Base
   has_many :accuseds    , :dependent => :destroy
   has_many :complainants, :dependent => :destroy
   has_many :attachments, :as => :attacheable
-  has_many :appeals
+  has_one :appeal
   belongs_to :constituency
   belongs_to :region
   belongs_to :judge
-
   belongs_to :action
   belongs_to :status
   belongs_to :user
@@ -45,7 +44,11 @@ class CaseDetail < ActiveRecord::Base
   accepts_nested_attributes_for :accuseds , :allow_destroy => true,:reject_if => :all_blank
   accepts_nested_attributes_for :complainants, :allow_destroy => true,:reject_if => :all_blank
   accepts_nested_attributes_for :attachments, :allow_destroy => true,:reject_if => :all_blank
-  
+
+  def to_s
+    court_case_number
+  end
+
   def get_status_highlight
     if self.status
       case self.status.name

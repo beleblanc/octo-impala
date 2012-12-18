@@ -7,12 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :region
   has_many :case_details
+  has_many :appeals, :foreign_key => :prosecutor_id
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids,:first_name,:surname,:region_id,:sex,:title
   # attr_accessible :title, :body
 
   def to_s
-    self.email
+    name
   end
 
   def name

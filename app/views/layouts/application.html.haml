@@ -43,11 +43,11 @@
           =msg
       .row-fluid
         -if content_for? :sidebar
-          .span3
+          .pull-right.span3
             .well.sidebar-nav
-              
-            .span9
-            = yield
+              =content_for :sidebar
+          .span9
+          = yield
         -else
           .span12
             =yield

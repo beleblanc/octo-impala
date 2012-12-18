@@ -1,22 +1,31 @@
+%h2
+  Appeal for
+  =@appeal.accused
+  on case:
+  =@appeal.case_detail
 = simple_form_for @appeal, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :accused_id
-  = f.input :case_detail_id
-  = f.input :court_type
-  = f.input :case_number
-  = f.input :prosecutor
-  = f.input :representative
-  = f.input :received_on
-  = f.input :commenced_on
-  = f.input :concluded_on
-  = f.input :grounds_for
-  = f.input :conviction_appeal_allowed
-  = f.input :conviction_appeal_disallowed
-  = f.input :sentence_appeal_allowed
-  = f.input :sentence_appeal_disallowed
-  = f.input :conviction_disallowed_reason
-  = f.input :sentence_disallowed_reason
-  = f.input :new_sentence
-  = f.input :judge_remarks
+  .well
+    = f.hidden_field :accused_id
+    = f.hidden_field :case_detail_id
+    = f.input :case_number
+    = f.input :prosecutor_id, as: :select, collection: User.includes(:roles).where("roles.name like '%prosecutor%'"),value_method: :id
+
+    = f.input :representative
+    = f.input :received_on ,as: :string, :input_html => {class:"datepicker"}
+    = f.input :commenced_on,as: :string, :input_html => {class:"datepicker"}
+    = f.input :concluded_on,as: :string, :input_html => {class:"datepicker"}
+    = f.input :grounds_for,label:"Grounds for appeal"
+    .cf
+    = f.input :conviction_appeal_allowed, :wrapper_html => {:class => "pull-left span2"}
+    = f.input :conviction_appeal_disallowed , :wrapper_html => {:class => "pull-left span2"}
+    .cf
+    = f.input :sentence_appeal_allowed, :wrapper_html => {:class => "pull-left span2"}
+    = f.input :sentence_appeal_disallowed , :wrapper_html => {:class => "pull-left span2"}
+    .cf
+    = f.input :conviction_disallowed_reason, input_html:{rows:"4"}
+    = f.input :sentence_disallowed_reason, input_html:{rows:"4"}
+    = f.input :new_sentence, input_html:{rows:"4"}
+    = f.input :judge_remarks, input_html:{rows:"4"}
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), appeals_path, :class => 'btn'

@@ -1,4 +1,4 @@
-.well.span2
+.well.span4
   %p
     %strong Name
     %br
@@ -6,11 +6,13 @@
   %p
     %strong Sex 
     %br
-      =f.sex      
+      =f.sex
+
   %p
     %strong Age 
     %br
       =f.age
+
   %p
     %strong Known to complainant? 
     %br
@@ -19,3 +21,6 @@
     %strong Relation 
     %br
       =f.relation
+  .cf
+  =link_to "Submit appeal", new_appeal_path(:case_detail_id => f.case_detail,:accused_id => f.id ), |
+    class:"btn btn-primary btn-large" unless f.appeal |

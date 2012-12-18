@@ -1,19 +1,7 @@
 - model_class = Appeal
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human
+  %h1=t '.title', :default => "Appeal for #{@appeal.accused} on case #{@appeal.case_detail}"
 
-%p
-  %strong= model_class.human_attribute_name(:accused_id) + ':'
-  %br
-  = @appeal.accused_id
-%p
-  %strong= model_class.human_attribute_name(:case_detail_id) + ':'
-  %br
-  = @appeal.case_detail_id
-%p
-  %strong= model_class.human_attribute_name(:court_type) + ':'
-  %br
-  = @appeal.court_type
 %p
   %strong= model_class.human_attribute_name(:case_number) + ':'
   %br

@@ -45,4 +45,8 @@
   = link_to "Delete", case_detail_path(@case_detail), :method=>:delete, :confirm=>"Are you sure?", :class=>"btn btn-danger" if current_user.has_role? :admin
   
  
+-content_for :sidebar do
+  -if @case_detail.appeal
+    =link_to "View Appeal", appeal_path(@case_detail.appeal), :class => "btn btn-primary btn-large"
+
 
