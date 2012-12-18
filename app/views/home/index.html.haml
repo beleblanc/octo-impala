@@ -1,12 +1,14 @@
 %h2 Welcome to the DPP Case Management System
 
 -if user_signed_in?
-  .span5
-    =high_chart("charge",@graph,) do
-      = "options.tooltip.formatter = function() {return this.series.name +': '+ this.y;}"
-  .span5
-    =high_chart("status",@status) do
-      = "options.tooltip.formatter = function() {return this.series.name +': '+ this.y;}"
+  -if @graph
+    .span5
+      =high_chart("charge",@graph,) do
+        = "options.tooltip.formatter = function() {return this.series.name +': '+ this.y;}"
+  -if @status
+    .span5
+      =high_chart("status",@status) do
+        = "options.tooltip.formatter = function() {return this.series.name +': '+ this.y;}"
   
 -else
   =render 'home/sign_in'

@@ -64,6 +64,6 @@
   = @appeal.judge_remarks
 
 .form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), appeals_path, :class => 'btn'
+  = link_to t('.back', :default => t("helpers.links.back")), case_detail_path(@appeal.case_detail), :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_appeal_path(@appeal), :class => 'btn'
   = link_to t('.destroy', :default => t("helpers.links.destroy")), appeal_path(@appeal), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

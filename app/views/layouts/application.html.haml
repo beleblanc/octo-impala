@@ -21,7 +21,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          =link_to "DPP CM Pro", root_path, class: "brand"
+          =link_to "MOJ Case Management", root_path, class: "brand"
           .container.nav-collapse
             %ul.nav
               -if can? :manage, CaseDetail
@@ -43,11 +43,11 @@
           =msg
       .row-fluid
         -if content_for? :sidebar
-          .pull-right.span3
+          .span9
+            = yield
+          .span3
             .well.sidebar-nav
               =content_for :sidebar
-          .span9
-          = yield
         -else
           .span12
             =yield

@@ -1,9 +1,5 @@
 - @model_class = CaseDetail
 
-.well.pull-right
-  %h3= @model_class.human_attribute_name(:status) + ':' + @case_detail.status.name if @case_detail.status.present?
-.cf  
-
 %ul.nav.nav-tabs
   %li.active
     %a{href:"#Background", data:{toggle:"tab"}} Background
