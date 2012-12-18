@@ -1,6 +1,18 @@
 DPPPro::Application.routes.draw do
 
 
+  get "appeals/show"
+
+  get "appeals/edit"
+
+  get "appeals/new"
+
+  get "appeals/create"
+
+  get "appeals/update"
+
+  get "appeals/destroy"
+
   resources :case_details
   resources :attachments
   resources :case_escalations do

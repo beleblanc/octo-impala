@@ -1,0 +1,81 @@
+- model_class = Appeal
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:accused_id) + ':'
+  %br
+  = @appeal.accused_id
+%p
+  %strong= model_class.human_attribute_name(:case_detail_id) + ':'
+  %br
+  = @appeal.case_detail_id
+%p
+  %strong= model_class.human_attribute_name(:court_type) + ':'
+  %br
+  = @appeal.court_type
+%p
+  %strong= model_class.human_attribute_name(:case_number) + ':'
+  %br
+  = @appeal.case_number
+%p
+  %strong= model_class.human_attribute_name(:prosecutor) + ':'
+  %br
+  = @appeal.prosecutor
+%p
+  %strong= model_class.human_attribute_name(:representative) + ':'
+  %br
+  = @appeal.representative
+%p
+  %strong= model_class.human_attribute_name(:received_on) + ':'
+  %br
+  = @appeal.received_on
+%p
+  %strong= model_class.human_attribute_name(:commenced_on) + ':'
+  %br
+  = @appeal.commenced_on
+%p
+  %strong= model_class.human_attribute_name(:concluded_on) + ':'
+  %br
+  = @appeal.concluded_on
+%p
+  %strong= model_class.human_attribute_name(:reason_for) + ':'
+  %br
+  = @appeal.reason_for
+%p
+  %strong= model_class.human_attribute_name(:conviction_appeal_allowed) + ':'
+  %br
+  = @appeal.conviction_appeal_allowed
+%p
+  %strong= model_class.human_attribute_name(:conviction_appeal_disallowed) + ':'
+  %br
+  = @appeal.conviction_appeal_disallowed
+%p
+  %strong= model_class.human_attribute_name(:sentence_appeal_allowed) + ':'
+  %br
+  = @appeal.sentence_appeal_allowed
+%p
+  %strong= model_class.human_attribute_name(:sentence_appeal_disallowed) + ':'
+  %br
+  = @appeal.sentence_appeal_disallowed
+%p
+  %strong= model_class.human_attribute_name(:conviction_disallowed_reason) + ':'
+  %br
+  = @appeal.conviction_disallowed_reason
+%p
+  %strong= model_class.human_attribute_name(:sentence_disallowed_reason) + ':'
+  %br
+  = @appeal.sentence_disallowed_reason
+%p
+  %strong= model_class.human_attribute_name(:new_sentence) + ':'
+  %br
+  = @appeal.new_sentence
+%p
+  %strong= model_class.human_attribute_name(:judge_remarks) + ':'
+  %br
+  = @appeal.judge_remarks
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), appeals_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_appeal_path(@appeal), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), appeal_path(@appeal), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'
