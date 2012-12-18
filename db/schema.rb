@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004123308) do
+ActiveRecord::Schema.define(:version => 20121218083939) do
 
   create_table "accuseds", :force => true do |t|
     t.string   "first_name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20121004123308) do
     t.date     "received_on"
     t.date     "commenced_on"
     t.date     "concluded_on"
-    t.string   "reason_for"
+    t.string   "grounds_for"
     t.boolean  "conviction_appeal_allowed"
     t.boolean  "conviction_appeal_disallowed"
     t.boolean  "sentence_appeal_allowed"

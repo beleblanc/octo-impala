@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69405d92-8fe7-4ee1-9069-55833149eb96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DPPPro.iml" afterPath="$PROJECT_DIR$/.idea/DPPPro.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/appeal.rb" afterPath="$PROJECT_DIR$/app/models/appeal.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appeals/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/appeals/_form.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/appeals/show.html.haml" afterPath="$PROJECT_DIR$/app/views/appeals/show.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="DPPPro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,64 +28,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="postgresql.yml.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/recipes/templates/postgresql.yml.erb">
+      <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="34" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+            <state line="47" column="0" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nginx_unicorn.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/recipes/templates/nginx_unicorn.erb">
+      <file leaf-file-name="20121218083939_rename_reason_for_to_grounds_for.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20121218083939_rename_reason_for_to_grounds_for.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="2" column="51" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="appeal.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/appeal.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="45" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+            <state line="10" column="40" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="case_details_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/case_details_controller.rb">
+      <file leaf-file-name="show.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/appeals/show.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="8" selection-start="1099" selection-end="1270" vertical-scroll-proportion="0.0">
+            <state line="43" column="23" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-7.68">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appeals_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/appeals_controller.rb">
+      <file leaf-file-name="_form.html.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/appeals/_form.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.04010025">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unicorn_init.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn_init.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unicorn.rb.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn.rb.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="13" column="47" selection-start="447" selection-end="447" vertical-scroll-proportion="0.5561497">
               <folding />
             </state>
           </provider>
@@ -109,10 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/recipes/nginx.rb" />
-        <option value="$PROJECT_DIR$/config/recipes/node.js" />
-        <option value="$PROJECT_DIR$/config/recipes/rbenv.rb" />
-        <option value="$PROJECT_DIR$/config/recipes/templates/nginx_unicorn.erb" />
         <option value="$PROJECT_DIR$/config/recipes/postgresql.rb" />
         <option value="$PROJECT_DIR$/config/recipes/templates/unicorn.rb.erb" />
         <option value="$PROJECT_DIR$/config/recipes/templates/unicorn_init.erb" />
@@ -125,6 +103,10 @@
         <option value="$PROJECT_DIR$/config/recipes/templates/postgresql.yml.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/appeals_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20121218083939_rename_reason_for_to_grounds_for.rb" />
+        <option value="$PROJECT_DIR$/app/models/appeal.rb" />
+        <option value="$PROJECT_DIR$/app/views/appeals/show.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/appeals/_form.html.haml" />
       </list>
     </option>
   </component>
@@ -425,7 +407,7 @@
       </server>
     </servers>
   </component>
-  <component name="RunManager" selected="IRB console.Rails console: DPPPro">
+  <component name="RunManager" selected="Rake.db:migrate">
     <configuration default="false" name="db:rollback" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="DPPPro" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -840,8 +822,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: DPPPro" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.db:migrate" />
+        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
+        <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: DPPPro" />
         <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate" />
         <item index="3" class="java.lang.String" itemvalue="Rake.db:migrate" />
         <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
@@ -897,7 +879,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1276" height="778" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
@@ -909,7 +891,7 @@
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.49674797" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13743316" sideWeight="0.21956296" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18103448" sideWeight="0.6345609" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18103448" sideWeight="0.6345609" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3654391" sideWeight="0.4390244" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -976,31 +958,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/capistrano-2.12.0/lib/capistrano/recipes/deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/notifications.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="31" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.84254605" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120810103928_create_accuseds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notifications/daily_case_reminder.text.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="129" selection-start="87" selection-end="129" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120821115330_rename_case_detail_charges_columns.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="46" selection-start="232" selection-end="232" vertical-scroll-proportion="0.17721519" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/rails">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="20" selection-start="295" selection-end="295" vertical-scroll-proportion="0.14976598" />
@@ -1021,23 +978,23 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/recipes/templates/postgresql.yml.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/appeals_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.04010025">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn.rb.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/case_details_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="51" column="8" selection-start="1099" selection-end="1270" vertical-scroll-proportion="0.19002375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn_init.erb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="27" column="45" selection-start="674" selection-end="674" vertical-scroll-proportion="0.72209024">
           <folding />
         </state>
       </provider>
@@ -1049,23 +1006,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/config/recipes/templates/postgresql.yml.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="45" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+        <state line="7" column="34" selection-start="234" selection-end="234" vertical-scroll-proportion="0.28282827">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/case_details_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn_init.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="8" selection-start="1099" selection-end="1270" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/appeals_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config/recipes/templates/unicorn.rb.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.04010025">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20121218083939_rename_reason_for_to_grounds_for.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="51" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/appeal.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="40" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/appeals/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="23" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-7.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/appeals/_form.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="47" selection-start="447" selection-end="447" vertical-scroll-proportion="0.5561497">
           <folding />
         </state>
       </provider>
